@@ -1,0 +1,17 @@
+.FlockOfBirds {
+  position: relative;
+}
+
+.FlockOfBirds > header {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+}
+
+.FlockOfBirds > header > h1 {
+  margin: 0;
+}
+
+.FlockOfBirds > header > div {
+  margin-top: 6px;
+}
