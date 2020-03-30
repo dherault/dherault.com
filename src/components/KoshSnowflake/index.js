@@ -6,7 +6,11 @@ function FlockOfBirds() {
   const canvasRef = useRef()
 
   useEffect(() => {
-    handleCanvas(canvasRef.current)
+    const unregisterListeners = handleCanvas(canvasRef.current)
+
+    canvasRef.current.focus()
+
+    return unregisterListeners
   }, [])
 
   return (

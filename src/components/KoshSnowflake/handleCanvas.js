@@ -115,8 +115,7 @@ function handleCanvas(canvas) {
     if (isDezooming || width === canvas.width) return
 
     isDezooming = true
-    canvas.removeEventListener('wheel', wheelListener)
-    document.removeEventListener('mousemove', mouseMoveListener)
+    removeEventListeners()
 
     const intervalId = setInterval(() => {
       zoom(1.01)
@@ -124,16 +123,25 @@ function handleCanvas(canvas) {
 
       if (width === canvas.width) {
         clearInterval(intervalId)
-        canvas.addEventListener('wheel', wheelListener)
-        document.addEventListener('mousemove', mouseMoveListener)
+        addEventListeners()
       }
     }, 6)
   }
 
-  canvas.addEventListener('mousemove', mouseMoveListener)
-  canvas.addEventListener('wheel', wheelListener)
+  function addEventListeners() {
+    document.addEventListener('mousemove', mouseMoveListener, { passive: false })
+    document.addEventListener('wheel', wheelListener, { passive: false })
+  }
 
+  function removeEventListeners() {
+    document.removeEventListener('mousemove', mouseMoveListener)
+    document.removeEventListener('wheel', wheelListener)
+  }
+
+  addEventListeners()
   draw()
+
+  return removeEventListeners
 
   /*
     To prevent underflow:

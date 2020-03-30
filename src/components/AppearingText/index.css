@@ -7,5 +7,5 @@
   right: 0;
   top: 0;
   bottom: 0;
-  transition: width 0.33s linear 0.5s;
+  transition: width 0.333s ease-out 1.333s;
 }

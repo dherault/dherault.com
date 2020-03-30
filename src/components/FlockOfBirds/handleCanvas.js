@@ -56,7 +56,7 @@ function handleCanvas(canvas) {
   const birdColor = 'white'
   const flockingDistance = 150
   const nearingDistance = birdHeight
-  const backgroundColor = 'RoyalBlue'
+  const backgroundColor = '#2196f3'
 
   class Bird {
     constructor() {

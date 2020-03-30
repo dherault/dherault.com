@@ -23,7 +23,7 @@ h1, h2 {
 }
 
 a {
-  color: royalblue;
+  color: #2196f3;
   text-decoration: none;
 }
 
@@ -63,15 +63,13 @@ canvas {
   align-items: flex-start;
 }
 
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.fade-enter
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+.curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
 }
 
 @media only screen and (max-width: 600px) {
@@ -102,5 +100,6 @@ canvas {
 }
 
 .github-button-wrapper {
+  min-height: 20px;
   transition: opacity 0.33s linear 0.5s;
 }

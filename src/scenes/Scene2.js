@@ -4,17 +4,27 @@ import { Link } from 'react-router-dom'
 import KoshSnowflake from '../components/KoshSnowflake'
 import AppearingText from '../components/AppearingText'
 
-function Scene2() {
+function Scene2({ goTo }) {
+
+  function handleGoBackClick(event) {
+    event.preventDefault()
+    goTo('/1')
+  }
+
+  function handleContinueClick(event) {
+    event.preventDefault()
+    goTo('/3')
+  }
   return (
     <div className="Scene">
       <KoshSnowflake />
       <header className="card">
         <AppearingText>
           <h1>
-            I ❤️ open-source software
+            I <span role="img" aria-label="love">❤️</span> open-source software
           </h1>
         </AppearingText>
-        <div className="mt-3 mb-2">
+        <div className="my-3">
           <AppearingText color="#e30b5d">
             <h2>
               Here are a few of my contributions:
@@ -45,7 +55,13 @@ function Scene2() {
           name="Pix"
           url="https://github.com/1024pix/pix"
         >
-          A French government app to assert students' computer skills. Made by a dream team.
+          A French government app to assert student and civil servants' computer skills. Made by a dream team.
+        </Repository>
+        <Repository
+          name="Flexpad"
+          url="https://github.com/dherault/flexpad"
+        >
+          A CSS utility to easily create any flexbox layout.
         </Repository>
       </header>
       <article className="card">
@@ -63,9 +79,14 @@ function Scene2() {
             Response is in <a href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L139" target="_blank" rel="noopener noreferrer">the code</a>.
           </AppearingText>
         </div>
-        <div className="mt-3">
-          <AppearingText color="#e30b5d">
-            <Link to="/2">
+        <div className="x5b w100 mt-3">
+          <AppearingText>
+            <Link to="/1" onClick={handleGoBackClick}>
+              Go back
+            </Link>
+          </AppearingText>
+          <AppearingText>
+            <Link to="/3" onClick={handleContinueClick}>
               Continue
             </Link>
           </AppearingText>
