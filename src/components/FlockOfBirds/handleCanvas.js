@@ -53,9 +53,10 @@ function handleCanvas(canvas) {
   const birdWidth = 30
   const birdHeight = 40
   const birdRadius = birdHeight / 2
-  const birdColor = 'RoyalBlue'
+  const birdColor = 'white'
   const flockingDistance = 150
   const nearingDistance = birdHeight
+  const backgroundColor = 'RoyalBlue'
 
   class Bird {
     constructor() {
@@ -94,7 +95,9 @@ function handleCanvas(canvas) {
   }
 
   function draw() {
-    _.clearRect(0, 0, width, height)
+    _.fillStyle = backgroundColor
+    _.fillRect(0, 0, width, height)
+    // _.clearRect(0, 0, width, height)
 
     birds.forEach(bird => bird.draw(_))
   }

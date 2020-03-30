@@ -1,0 +1,11 @@
+.AppearingText {
+  position: relative;
+}
+
+.AppearingText-background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: width 0.33s linear 0.5s;
+}

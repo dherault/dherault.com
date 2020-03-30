@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import 'flexpad/dist/flexpad.min.css'
+import 'bootstrap-spacing-utils'
 import './index.css'
 
 import Scene1 from './scenes/Scene1'
@@ -13,14 +15,27 @@ import * as serviceWorker from './serviceWorker'
 ReactDOM.render(
   <Router>
     <Redirect from="/" to ="/1" />
-    <Switch>
-      <Route exact path="/1">
-        <Scene1 />
-      </Route>
-      <Route exact path="/2">
-        <Scene2 />
-      </Route>
-    </Switch>
+    <Route
+      render={(({ location }) => (
+        <TransitionGroup>
+          <CSSTransition
+            key={location.key}
+            classNames="fade"
+            timeout={300}
+          >
+            <Switch>
+              <Route exact path="/1">
+                <Scene1 />
+              </Route>
+              <Route exact path="/2">
+                <Scene2 />
+              </Route>
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      ))}
+    />
+
   </Router>,
   document.getElementById('root')
 )

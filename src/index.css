@@ -1,8 +1,13 @@
+@import-normalize;
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,6 +15,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1, h2 {
+  font-weight: 900;
+  margin: 0;
+}
+
+a {
+  color: royalblue;
+  text-decoration: none;
 }
 
 canvas {
@@ -23,4 +38,68 @@ canvas {
 
 .grow {
   flex-grow: 1;
+}
+
+.card {
+  background-color: white;
+  padding: 12px 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.Scene {
+  position: relative;
+  overflow: hidden;
+}
+
+.Scene-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.Scene-content > header {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Scene-content > article {
+  position: absolute;
+  bottom: 12%;
+  right: 12%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .Scene-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Scene-content > header {
+    position: initial;
+    margin-top: -16.666%;
+  }
 }
