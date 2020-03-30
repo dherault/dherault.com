@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import 'flexpad/dist/flexpad.min.css'
@@ -14,31 +14,36 @@ import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <Router>
-    <Redirect from="/" to ="/1" />
-    <Route
-      render={(({ location }) => (
-        <TransitionGroup>
-          <CSSTransition
-            key={location.key}
-            classNames="fade"
-            timeout={300}
-          >
-            <Switch>
-              <Route exact path="/1">
-                <Scene1 />
-              </Route>
-              <Route exact path="/2">
-                <Scene2 />
-              </Route>
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
-      ))}
-    />
-
+    <App />
   </Router>,
   document.getElementById('root')
 )
+
+function App() {
+  const location = useLocation()
+
+  return (
+    <>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          classNames="fade"
+          timeout={300}
+        >
+          <Switch>
+            <Route exact path="/1">
+              <Scene1 />
+            </Route>
+            <Route exact path="/2">
+              <Scene2 />
+            </Route>
+            <Redirect exact from="/" to ="/1" />
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
+    </>
+  )
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

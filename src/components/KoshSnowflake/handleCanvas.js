@@ -1,6 +1,9 @@
 function handleCanvas(canvas) {
   const _ = canvas.getContext('2d')
 
+  const backgroundColor = '#e30b5d'
+  const strokeColor = 'white'
+
   let width = canvas.width = window.innerWidth
   let height = canvas.height = window.innerHeight
   const displayRatio = height / width
@@ -11,11 +14,12 @@ function handleCanvas(canvas) {
   let yWindow = 0
   let isDezooming = false
 
+
   const piByThree = Math.PI / 3
   const xStart = canvas.width / 3
-  const length = Math.min(canvas.width / 3, canvas.height)
+  const length = Math.min(canvas.width / 3, canvas.height * 0.75)
   const sideLength = length / (2 * (1 + Math.cos(piByThree)))
-  const heightLength = length * Math.cos(piByThree) + sideLength * Math.cos(piByThree)
+  const heightLength = length * Math.cos(piByThree) + sideLength * Math.sin(piByThree) / 3
   const yStart = (canvas.height - heightLength) / 2
 
   function scaleX(x) {
@@ -70,14 +74,15 @@ function handleCanvas(canvas) {
   }
 
   function draw() {
-    console.log('draw')
     const depth = Math.round(4 + 0.9 * Math.log(canvas.width / width))
 
-    _.clearRect(0, 0, canvas.width, canvas.height)
+    _.fillStyle = backgroundColor
+    _.strokeStyle = strokeColor
+    _.fillRect(0, 0, canvas.width, canvas.height)
     _.beginPath()
     _.moveTo(xStart, yStart)
     triangle(_, depth, xStart, yStart, length)
-    triangle(_, depth, canvas.width / 2, yStart + length * Math.sin(piByThree), length, -2 * piByThree)
+    triangle(_, depth, xStart + length / 2, yStart + length * Math.sin(piByThree), length, -2 * piByThree)
     triangle(_, depth, xStart + length, yStart, length, -4 * piByThree)
     _.closePath()
     _.stroke()
@@ -132,12 +137,10 @@ function handleCanvas(canvas) {
 
   /*
     To prevent underflow:
-    - Save the zoom state and dezoom as a time reversal. The user has no control on the dezooming. Depends on memory
-    - Zoom toward a specific point continously. Depends on memory
-    - Zoom only forward. Independant of memory
+    - Save the zoom state at each zoom iteration and dezoom as a time reversal of this state. The user has no control on the dezooming. Depends on memory.
+    - Zoom toward a specific point continously. Depends on memory.
+    - Zoom only forward. Independant of memory.
   */
-
-  return yStart - 2 * sideLength * Math.cos(piByThree)
 }
 
 export default handleCanvas
