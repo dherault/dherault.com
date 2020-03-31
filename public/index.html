@@ -41,5 +41,21 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src="https://kit.fontawesome.com/509cd419ca.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCCFMf-0jb14_8lCVxVW0C3IMaSZ-pJt-0",
+        authDomain: "dherault-com.firebaseapp.com",
+        databaseURL: "https://dherault-com.firebaseio.com",
+        projectId: "dherault-com",
+        storageBucket: "dherault-com.appspot.com",
+        messagingSenderId: "1044838175078",
+        appId: "1:1044838175078:web:63c1ab0a18b798630478a7",
+        measurementId: "G-82ZHM0V9XT"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
