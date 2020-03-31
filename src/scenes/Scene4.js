@@ -63,11 +63,20 @@ function Scene3({ goTo }) {
         <AppearingText className="mt-2">
           Going through life can be quite challenging too. Do you have a plan?
         </AppearingText>
-        <div className="x4 w100 mt-3">
+        <div className="x5b w100 mt-3">
           <AppearingText>
             <Link to="/3" onClick={handleGoBackClick}>
               Go back
             </Link>
+          </AppearingText>
+          <AppearingText>
+            <a
+              href="https://github.com/dherault/dherault.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source code
+            </a>
           </AppearingText>
         </div>
       </article>
