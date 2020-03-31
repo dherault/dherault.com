@@ -8,7 +8,7 @@ function AppearingText({ color = 'black', children, ...props }) {
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true)
-    }, 0)
+    }, 1)
   }, [])
 
   return (

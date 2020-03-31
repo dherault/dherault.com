@@ -5,6 +5,7 @@ const pathnameToColor = {
   '/1': '#2196f3',
   '/2': '#e30b5d',
   '/3': '#c6ff00',
+  '/4': '#673ab7',
 }
 
 function Curtain({ children }) {
@@ -30,8 +31,6 @@ function Curtain({ children }) {
       }, 666)
     }, 666)
   }
-
-  console.log('opacity', opacity)
 
   return (
     <>

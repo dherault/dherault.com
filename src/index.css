@@ -27,6 +27,25 @@ a {
   text-decoration: none;
 }
 
+button {
+  background-color: #673ab7;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 6px 10px;
+  transition: background-color 0.333s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #320b86;
+}
+
+button:focus {
+  outline: none;
+}
+
 canvas {
   width: 100vw;
   height: 100vh;
@@ -63,6 +82,13 @@ canvas {
   align-items: flex-start;
 }
 
+.Scene > section {
+  position: absolute;
+  bottom: 8.33%;
+  left: 8.33%;
+  max-width: 300px;
+}
+
 .curtain {
   position: absolute;
   top: 0;
@@ -70,6 +96,11 @@ canvas {
   left: 0;
   right: 0;
   z-index: 99999;
+}
+
+.SocialMedia-link {
+  color: black;
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 600px) {
