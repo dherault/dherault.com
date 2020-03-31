@@ -21,6 +21,10 @@ ReactDOM.render(
 function App() {
   const [isHidden, setIsHidden] = useState(false)
 
+  useEffect(() => {
+    document.getElementsByTagName('body')[0].style.height = window.innerHeight + 'px'
+  }, [])
+
   return (
     <Router>
       <Curtain>
