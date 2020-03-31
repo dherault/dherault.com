@@ -65,6 +65,12 @@ function Scene2({ goTo }) {
         >
           A CSS utility to easily create any flexbox layout.
         </Repository>
+        <Repository
+          name="Aquarelle"
+          url="https://github.com/dherault/aquarelle"
+        >
+          A random profile pictures generator with a sense of art.
+        </Repository>
       </header>
 
       <article className="card">
