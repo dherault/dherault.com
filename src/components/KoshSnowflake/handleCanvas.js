@@ -12,6 +12,7 @@ function handleCanvas(canvas) {
   let yMouse = 0
   let xWindow = 0
   let yWindow = 0
+  let isPanning = false
   let isDezooming = false
 
   const piByThree = Math.PI / 3
@@ -87,11 +88,32 @@ function handleCanvas(canvas) {
     _.stroke()
   }
 
+  function boundXWindow(x) {
+    return Math.max(0, Math.min(canvas.width - width, x))
+  }
+
+  function boundYWindow(y) {
+    return Math.max(0, Math.min(canvas.height - height, y))
+  }
+
   function mouseMoveListener(event) {
     xMouse = event.clientX * width / canvas.width + xWindow
     yMouse = event.clientY * height / canvas.height + yWindow
 
+    if (isPanning) {
+      xWindow = boundXWindow(xWindow - event.movementX * width / canvas.width)
+      yWindow = boundYWindow(yWindow - event.movementY * height / canvas.height)
+    }
+
     draw()
+  }
+
+  function mouseDownListener() {
+    isPanning = true
+  }
+
+  function mouseUpListener() {
+    isPanning = false
   }
 
   function wheelListener(event) {
@@ -106,8 +128,8 @@ function handleCanvas(canvas) {
   function zoom(factor) {
     width = Math.max(0, Math.min(canvas.width, width * factor))
     height = width * displayRatio
-    xWindow = Math.max(0, Math.min(canvas.width - width, xMouse - (xMouse - xWindow) * factor))
-    yWindow = Math.max(0, Math.min(canvas.height - height, yMouse - (yMouse - yWindow) * factor))
+    xWindow = boundXWindow(xMouse - (xMouse - xWindow) * factor)
+    yWindow = boundYWindow(yMouse - (yMouse - yWindow) * factor)
   }
 
   function dezoomToStart() {
@@ -129,11 +151,15 @@ function handleCanvas(canvas) {
 
   function addEventListeners() {
     document.addEventListener('mousemove', mouseMoveListener, { passive: false })
+    document.addEventListener('mousedown', mouseDownListener, { passive: false })
+    document.addEventListener('mouseup', mouseUpListener, { passive: false })
     document.addEventListener('wheel', wheelListener, { passive: false })
   }
 
   function removeEventListeners() {
     document.removeEventListener('mousemove', mouseMoveListener)
+    document.removeEventListener('mousedown', mouseDownListener)
+    document.removeEventListener('mouseup', mouseUpListener)
     document.removeEventListener('wheel', wheelListener)
   }
 
