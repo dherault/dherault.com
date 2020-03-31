@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import GitHubButton from 'react-github-btn'
 
 import KoshSnowflake from '../components/KoshSnowflake'
 import AppearingText from '../components/AppearingText'
@@ -120,15 +121,14 @@ function Repository({ name, url, children }) {
           </a>
         </AppearingText>
         <div className="github-button-wrapper" style={{ opacity }}>
-          <a
-            className="github-button"
+          <GitHubButton
             href={url}
             data-icon="octicon-star"
             data-show-count="true"
             aria-label={`Star ${name} on GitHub`}
           >
-            star
-          </a>
+            Star
+          </GitHubButton>
         </div>
       </div>
       <div className="mt-2">

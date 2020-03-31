@@ -1,0 +1,33 @@
+[debug] [2020-03-31T03:21:20.540Z] ----------------------------------------------------------------------
+[debug] [2020-03-31T03:21:20.541Z] Command:       /Users/sven/.nvm/versions/node/v13.7.0/bin/node /Users/sven/.nvm/versions/node/v13.7.0/bin/firebase deploy
+[debug] [2020-03-31T03:21:20.541Z] CLI Version:   7.16.2
+[debug] [2020-03-31T03:21:20.541Z] Platform:      darwin
+[debug] [2020-03-31T03:21:20.541Z] Node Version:  v13.7.0
+[debug] [2020-03-31T03:21:20.542Z] Time:          Tue Mar 31 2020 05:21:20 GMT+0200 (Central European Summer Time)
+[debug] [2020-03-31T03:21:20.542Z] ----------------------------------------------------------------------
+[debug] [2020-03-31T03:21:20.542Z] 
+[debug] [2020-03-31T03:21:20.550Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-31T03:21:20.551Z] > authorizing via signed-in user
+[debug] [2020-03-31T03:21:20.551Z] [iam] checking project dherault-com for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-03-31T03:21:20.553Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/dherault-com:testIamPermissions  
+
+[debug] [2020-03-31T03:21:21.389Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-31T03:21:21.391Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/dherault-com  
+ 
+[debug] [2020-03-31T03:21:21.606Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'dherault-com'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-03-31T03:21:21.608Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/dherault-com/versions  
+
+[debug] [2020-03-31T03:21:23.034Z] <<< HTTP RESPONSE 200
+[info] i  hosting[dherault-com]: beginning deploy...
+[info] i  hosting[dherault-com]: found 18 files in build
+[debug] [2020-03-31T03:21:23.152Z] [hosting] hash cache [YnVpbGQ] stored for 18 files
+[debug] [2020-03-31T03:21:23.153Z] [hosting][hash queue][FINAL]
+[debug] [2020-03-31T03:21:23.153Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/dherault-com/versions/beeaf87bf7d16d23:populateFiles  
+ <request body omitted>
+[debug] [2020-03-31T03:21:24.180Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-31T03:21:24.185Z] [hosting][populate queue][FINAL]
+[debug] [2020-03-31T03:21:24.185Z] [hosting] uploads queued: 9
