@@ -48,7 +48,6 @@ button:focus {
 
 canvas {
   width: 100vw;
-  height: 100vh;
 }
 
 .card {
@@ -136,6 +135,10 @@ canvas {
 
   .card {
     box-shadow: none;
+  }
+
+  .Scene {
+    height: 100%;
   }
 
   .Scene > header {
