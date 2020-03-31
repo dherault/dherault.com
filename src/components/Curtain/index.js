@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 
+import './index.css'
+
 const pathnameToColor = {
   '/1': '#2196f3',
   '/2': '#e30b5d',
@@ -34,7 +36,7 @@ function Curtain({ children }) {
 
   return (
     <>
-      <div className="curtain" style={{
+      <div className="Curtain" style={{
         opacity,
         backgroundColor: color,
         zIndex: opacity,
