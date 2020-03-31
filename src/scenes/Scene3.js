@@ -30,7 +30,9 @@ function Scene3({ goTo }) {
         <AppearingText className="mt-3">
           <strong>• Learning</strong>
           <div className="mt-1">
-            I take one hour a day to learn something new. Either in my field of work or outside of it.
+            I take one hour a day to learn something new.
+            <br />
+            Either in my field of work or outside of it.
           </div>
         </AppearingText>
         <AppearingText className="mt-3">
