@@ -28,7 +28,7 @@ function App() {
           <div className={isHidden ? 'mobile-hidden' : 'mobile-visible'}>
             <div
               onClick={() => setIsHidden(!isHidden)}
-              className="mobile-visibility card"
+              className="mobile-visibility"
               style={{ color }}
             >
               <strong>{isHidden ? 'Show' : 'Hide'} content</strong>

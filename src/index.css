@@ -59,6 +59,7 @@ canvas {
 
 .Scene {
   position: relative;
+  height: 100vh;
 }
 
 .Scene > header {
@@ -69,7 +70,6 @@ canvas {
   flex-direction: column;
   align-items: flex-start;
   max-width: 382px;
-
 }
 
 .Scene > article {
@@ -117,9 +117,14 @@ canvas {
 
 @media only screen and (max-width: 600px) {
 
+  html, body {
+    height: 100%;
+    overflow: auto;
+  }
+
   .mobile-visibility {
     display: block;
-    padding: 6px;
+    padding: 3px;
     transition: opacity 0.333s ease-in-out;
   }
 
@@ -138,18 +143,24 @@ canvas {
     transition: opacity 0.333s ease-in-out, visibility 0.333s linear 0.333s;
   }
 
+  .card {
+    box-shadow: none;
+  }
+
   .Scene > header {
-    top: 10%;
-    left: 8.33%;
-    right: 8.33%;
-    max-height: 180px;
+    top: 24px;
+    left: 0;
+    right: 0;
+    max-height: 170px;
+    max-width: 100%;
     overflow-y: auto;
   }
 
   .Scene > article {
-    left: 8.33%;
-    right: 8.33%;
-    bottom: 54px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
   }
 
   .Scene > section {
