@@ -178,5 +178,5 @@ canvas {
 .github-button-wrapper {
   min-height: 20px;
   margin: 0;
-  transition: opacity 0.33s linear 0.5s;
+  transition: opacity 0.33s linear 1.333s;
 }
