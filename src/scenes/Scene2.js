@@ -127,7 +127,7 @@ function Repository({ name, url, children }) {
             data-show-count="true"
             aria-label={`Star ${name} on GitHub`}
           >
-            Star
+            star
           </a>
         </div>
       </div>
