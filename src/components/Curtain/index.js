@@ -22,6 +22,10 @@ function Curtain({ children }) {
     }, 200)
   }, [])
 
+  useEffect(() => {
+    document.getElementsByClassName('Scene')[0].scrollTo(0, 0)
+  }, [location.key])
+
   function goTo(pathname) {
     setOpacity(1)
 

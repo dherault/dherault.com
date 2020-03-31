@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import FlockOfBirds from '../components/FlockOfBirds'
 import AppearingText from '../components/AppearingText'
 
 function Scene1({ goTo }) {
-
   function handleContinueClick(event) {
     event.preventDefault()
     goTo('/2')
