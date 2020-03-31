@@ -45,6 +45,10 @@ button:focus {
   outline: none;
 }
 
+button:disabled {
+  background-color: #9a67ea;
+}
+
 canvas {
   width: 100vw;
 }

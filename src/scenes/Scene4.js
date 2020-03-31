@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 import HilbertCurve from '../components/HilbertCurve'
 import AppearingText from '../components/AppearingText'
 
+const minDegree = 1
+const maxDegree = 6
+
 function Scene3({ goTo }) {
   const [degree, setDegree] = useState(4)
 
   function handleDegreeChange(delta) {
-    return () => setDegree(Math.min(6, Math.max(1, degree + delta)))
+    return () => setDegree(Math.min(maxDegree, Math.max(minDegree, degree + delta)))
   }
 
   function handleGoBackClick(event) {
@@ -50,10 +53,19 @@ function Scene3({ goTo }) {
       </header>
 
       <section className="card x5b">
-        <button type="button" onClick={handleDegreeChange(-1)}>
+        <button
+          type="button"
+          onClick={handleDegreeChange(-1)}
+          disabled={degree === minDegree}
+        >
           Decrease degree
         </button>
-        <button type="button" onClick={handleDegreeChange(1)} className="ml-2">
+        <button
+          type="button"
+          onClick={handleDegreeChange(1)}
+          disabled={degree === maxDegree}
+          className="ml-2"
+        >
           Increase degree
         </button>
       </section>
