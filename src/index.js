@@ -13,8 +13,6 @@ import Scene2 from './scenes/Scene2'
 import Scene3 from './scenes/Scene3'
 import Scene4 from './scenes/Scene4'
 
-import * as serviceWorker from './serviceWorker'
-
 ReactDOM.render(
   <Router>
     <Curtain>
@@ -39,8 +37,3 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 )
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register()
