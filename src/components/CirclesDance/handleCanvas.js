@@ -7,15 +7,16 @@ function handleCanvas(canvas) {
   const width = canvas.width = window.innerWidth
   const height = canvas.height = window.innerHeight
   const backgroundColor = '#c6ff00'
+  const strokeColor = '#9c27b0'
 
   /* ---
     Data
   --- */
 
   const data = [
-    createCirclesStructure(squareWave, '#9c27b0'),
-    createCirclesStructure(triangleWave, '#9c27b0'),
-    createCirclesStructure(sawtoothWave, '#9c27b0'),
+    createCirclesStructure(squareWave, strokeColor),
+    createCirclesStructure(triangleWave, strokeColor),
+    createCirclesStructure(sawtoothWave, strokeColor),
   ]
 
   function createCirclesStructure(fn, color) {
