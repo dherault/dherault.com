@@ -43,13 +43,13 @@ function Scene1({ goTo }) {
         <AppearingText>
           Birds fly in flocks, they tend to follow the bird in front of them.
         </AppearingText>
-        <AppearingText className="mt-1">
+        <AppearingText className="mt-2">
           Can you see the pattern?
         </AppearingText>
-        <AppearingText className="mt-1">
+        <AppearingText className="mt-2">
           Leading and following are not fixed states of mind.
         </AppearingText>
-        <AppearingText className="mt-1">
+        <AppearingText className="mt-2">
           You must be versatile like a bird.
         </AppearingText>
         <div className="x6 w100 mt-3">

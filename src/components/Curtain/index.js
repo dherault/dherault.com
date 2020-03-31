@@ -12,7 +12,7 @@ function Curtain({ children }) {
   const [opacity, setOpacity] = useState(1)
   const history = useHistory()
   const location = useLocation()
-  const backgroundColor = pathnameToColor[location.pathname]
+  const color = pathnameToColor[location.pathname]
 
   useEffect(() => {
     setTimeout(() => {
@@ -36,11 +36,11 @@ function Curtain({ children }) {
     <>
       <div className="curtain" style={{
         opacity,
-        backgroundColor,
+        backgroundColor: color,
         zIndex: opacity,
         transition: `opacity 0.666s ease-in-out, background-color 0.666s linear${opacity ? '' : ', z-index 1.333s linear'}`,
       }} />
-      {children({ goTo })}
+      {children({ goTo, color })}
     </>
   )
 }
