@@ -16,6 +16,11 @@ function Scene3({ goTo }) {
     goTo('/3')
   }
 
+  function handleStartOverClick(event) {
+    event.preventDefault()
+    goTo('/1')
+  }
+
   return (
     <div className="Scene">
 
@@ -77,6 +82,11 @@ function Scene3({ goTo }) {
             >
               Source code
             </a>
+          </AppearingText>
+          <AppearingText>
+            <Link to="/1" onClick={handleStartOverClick}>
+              Start over
+            </Link>
           </AppearingText>
         </div>
       </article>
