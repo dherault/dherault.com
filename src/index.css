@@ -62,8 +62,8 @@ canvas {
 
 .Scene > header {
   position: absolute;
-  top: 8.33%;
-  left: 8.33%;
+  top: 6%;
+  left: 6%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -72,8 +72,8 @@ canvas {
 
 .Scene > article {
   position: absolute;
-  bottom: 8.33%;
-  right: 8.33%;
+  bottom: 6%;
+  right: 6%;
   max-width: 264px;
   display: flex;
   flex-direction: column;
@@ -82,8 +82,8 @@ canvas {
 
 .Scene > section {
   position: absolute;
-  bottom: 8.33%;
-  left: 8.33%;
+  bottom: 6%;
+  left: 6%;
   max-width: 300px;
 }
 
