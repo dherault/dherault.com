@@ -5,9 +5,7 @@ import handleCanvas from './handleCanvas'
 function FlockOfBirds() {
   const canvasRef = useRef()
 
-  useEffect(() => {
-    handleCanvas(canvasRef.current)
-  }, [])
+  useEffect(() => handleCanvas(canvasRef.current), [])
 
   return (
     <canvas ref={canvasRef} />

@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 const pathnameToColor = {
   '/1': '#2196f3',
   '/2': '#e30b5d',
-  '/3': '#ffeb3b',
+  '/3': '#c6ff00',
 }
 
 function Curtain({ children }) {

@@ -156,13 +156,20 @@ function handleCanvas(canvas) {
     })
   }
 
+  let stopped = false
+
   function step() {
     update()
     draw()
+
+    if (stopped) return
+
     requestAnimationFrame(step)
   }
 
   requestAnimationFrame(step)
+
+  return () => stopped = true
 }
 
 export default handleCanvas

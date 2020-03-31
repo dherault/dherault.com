@@ -2,18 +2,14 @@ import React, { useRef, useEffect } from 'react'
 
 import handleCanvas from './handleCanvas'
 
-function FlockOfBirds() {
+function CirclesDance() {
   const canvasRef = useRef()
 
-  useEffect(() => {
-    canvasRef.current.focus()
-
-    return handleCanvas(canvasRef.current)
-  }, [])
+  useEffect(() => handleCanvas(canvasRef.current), [])
 
   return (
     <canvas ref={canvasRef} />
   )
 }
 
-export default FlockOfBirds
+export default CirclesDance

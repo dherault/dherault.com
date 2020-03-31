@@ -15,22 +15,23 @@ function Scene2({ goTo }) {
     event.preventDefault()
     goTo('/3')
   }
+
   return (
     <div className="Scene">
+
       <KoshSnowflake />
+
       <header className="card">
         <AppearingText>
           <h1>
             I <span role="img" aria-label="love">❤️</span> open-source software
           </h1>
         </AppearingText>
-        <div className="my-3">
-          <AppearingText color="#e30b5d">
-            <h2>
-              Here are a few of my contributions:
-            </h2>
-          </AppearingText>
-        </div>
+        <AppearingText color="#e30b5d" className="mt-3 mb-2">
+          <h2>
+            Here are a few of my contributions:
+          </h2>
+        </AppearingText>
         <Repository
           name="Serverless-offline"
           url="https://github.com/dherault/serverless-offline"
@@ -64,6 +65,7 @@ function Scene2({ goTo }) {
           A CSS utility to easily create any flexbox layout.
         </Repository>
       </header>
+
       <article className="card">
         <AppearingText>
           Fractals can be a bit surprising.
@@ -72,13 +74,11 @@ function Scene2({ goTo }) {
           <br />
           Why does it de-zoom at some point?
         </AppearingText>
-        <div className="mt-2">
-          <AppearingText>
-            How can computers prevent underflow while rendering fractals, i.e. handling numbers that are too low for their processor to handle?
-            <br />
-            Response is in <a href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L139" target="_blank" rel="noopener noreferrer">the code</a>.
-          </AppearingText>
-        </div>
+        <AppearingText className="mt-2">
+          How can computers prevent underflow while rendering fractals, i.e. handling numbers that are too low for their processor to handle?
+          <br />
+          Response is in <a href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L139" target="_blank" rel="noopener noreferrer">the code</a>.
+        </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>
             <Link to="/1" onClick={handleGoBackClick}>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import './index.css'
 
-function AppearingText({ color = 'black', children }) {
+function AppearingText({ color = 'black', children, ...props }) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -13,8 +13,8 @@ function AppearingText({ color = 'black', children }) {
 
   return (
     <div
-      className="AppearingText"
-      style={{ color }}
+      style={{ color, position: 'relative' }}
+      {...props}
     >
       {children}
       <div

@@ -10,6 +10,7 @@ import Curtain from './components/Curtain'
 
 import Scene1 from './scenes/Scene1'
 import Scene2 from './scenes/Scene2'
+import Scene3 from './scenes/Scene3'
 
 import * as serviceWorker from './serviceWorker'
 
@@ -23,6 +24,9 @@ ReactDOM.render(
           </Route>
           <Route exact path="/2">
             <Scene2 goTo={goTo} />
+          </Route>
+          <Route exact path="/3">
+            <Scene3 goTo={goTo} />
           </Route>
           <Redirect exact from="/" to ="/1" />
         </Switch>
