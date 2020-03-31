@@ -14,7 +14,6 @@ function handleCanvas(canvas) {
   let yWindow = 0
   let isDezooming = false
 
-
   const piByThree = Math.PI / 3
   const xStart = canvas.width / 3
   const length = Math.min(canvas.width / 3, canvas.height * 0.75)

@@ -22,10 +22,6 @@ function Curtain({ children }) {
     }, 200)
   }, [])
 
-  useEffect(() => {
-    document.getElementsByClassName('Scene')[0].scrollTo(0, 0)
-  }, [location.key])
-
   function goTo(pathname) {
     setOpacity(1)
 
@@ -40,12 +36,15 @@ function Curtain({ children }) {
 
   return (
     <>
-      <div className="Curtain" style={{
-        opacity,
-        backgroundColor: color,
-        zIndex: opacity,
-        transition: `opacity 0.666s ease-in-out, background-color 0.666s linear${opacity ? '' : ', z-index 1.333s linear'}`,
-      }} />
+      <div
+        className="Curtain"
+        style={{
+          opacity,
+          backgroundColor: color,
+          zIndex: opacity,
+          transition: `opacity 0.666s ease-in-out, background-color 0.666s linear${opacity ? '' : ', z-index 1.333s linear'}`,
+        }}
+      />
       {children({ goTo, color })}
     </>
   )

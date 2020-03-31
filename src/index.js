@@ -21,8 +21,9 @@ ReactDOM.render(
 function App() {
   const [isHidden, setIsHidden] = useState(false)
 
+  // HACK to fix the height on mobile resolutions
   useEffect(() => {
-    document.getElementsByTagName('body')[0].style.height = window.innerHeight + 'px'
+    document.getElementsByTagName('body')[0].style.height = `${window.innerHeight}px`
   }, [])
 
   return (
@@ -50,7 +51,7 @@ function App() {
               <Route exact path="/4">
                 <Scene4 goTo={goTo} />
               </Route>
-              <Redirect exact from="/" to ="/1" />
+              <Redirect exact from="/" to="/1" />
             </Switch>
           </div>
         )}

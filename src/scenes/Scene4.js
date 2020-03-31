@@ -50,10 +50,10 @@ function Scene3({ goTo }) {
       </header>
 
       <section className="card x5b">
-        <button onClick={handleDegreeChange(-1)}>
+        <button type="button" onClick={handleDegreeChange(-1)}>
           Decrease degree
         </button>
-        <button onClick={handleDegreeChange(1)} className="ml-2">
+        <button type="button" onClick={handleDegreeChange(1)} className="ml-2">
           Increase degree
         </button>
       </section>
@@ -103,7 +103,7 @@ function SocialMedia({ name, url, icon }) {
         rel="noopener noreferrer"
         className="x4 SocialMedia-link"
       >
-        <i class={`fab ${icon}`} />
+        <i className={`fab ${icon}`} />
         <strong className="ml-2">
           {name}
         </strong>

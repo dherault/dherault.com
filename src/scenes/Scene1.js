@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import FlockOfBirds from '../components/FlockOfBirds'

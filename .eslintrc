@@ -1,0 +1,6 @@
+{
+  "extends": "dherault",
+  "rules": {
+    "react/no-unescaped-entities": "off"
+  }
+}
