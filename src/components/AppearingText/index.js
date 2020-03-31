@@ -22,6 +22,7 @@ function AppearingText({ color = 'black', children, ...props }) {
         style={{
           backgroundColor: color,
           width: isLoaded ? 0 : '100%',
+          visibility: isLoaded ? 'hidden' : 'visible',
         }}
       />
     </div>
