@@ -145,7 +145,7 @@ function handleCanvas(canvas) {
   /*
     To prevent underflow:
     - Save the zoom state at each zoom iteration and dezoom as a time reversal of this state. The user has no control on the dezooming. Depends on memory.
-    - Zoom toward a specific point continously. Depends on memory.
+    - Zoom toward a specific point or a path continously. Depends on memory.
     - Zoom only forward. Independant of memory.
   */
 }
