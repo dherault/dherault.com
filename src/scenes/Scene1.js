@@ -52,7 +52,7 @@ function Scene1({ goTo }) {
           You must be versatile like a bird.
         </AppearingText>
         <div className="x6 w100 mt-3">
-          <AppearingText color="#2196f3">
+          <AppearingText>
             <Link to="/2" onClick={handleContinueClick}>
               Continue
             </Link>
