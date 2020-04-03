@@ -27,7 +27,6 @@ a {
 }
 
 button {
-  background-color: #673ab7;
   color: white;
   border: none;
   font-size: 16px;
@@ -37,16 +36,32 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #320b86;
-}
-
 button:focus {
   outline: none;
 }
 
-button:disabled {
+.button-purple {
+  background-color: #673ab7;
+}
+
+.button-purple:hover {
+  background-color: #320b86;
+}
+
+.button-purple:disabled {
   background-color: #9a67ea;
+}
+
+.button-indigo {
+  background-color: #3f51b5;
+}
+
+.button-indigo:hover {
+  background-color: #002984;
+}
+
+.button-indigo:disabled {
+  background-color: #757de8;
 }
 
 canvas {

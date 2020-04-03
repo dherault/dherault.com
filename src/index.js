@@ -12,6 +12,7 @@ import Scene1 from './scenes/Scene1'
 import Scene2 from './scenes/Scene2'
 import Scene3 from './scenes/Scene3'
 import Scene4 from './scenes/Scene4'
+import Scene5 from './scenes/Scene5'
 
 ReactDOM.render(
   <App />,
@@ -50,6 +51,9 @@ function App() {
               </Route>
               <Route exact path="/4">
                 <Scene4 goTo={goTo} />
+              </Route>
+              <Route exact path="/5">
+                <Scene5 goTo={goTo} />
               </Route>
               <Redirect exact from="/" to="/1" />
             </Switch>

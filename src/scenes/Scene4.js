@@ -7,7 +7,7 @@ import AppearingText from '../components/AppearingText'
 const minDegree = 1
 const maxDegree = 6
 
-function Scene3({ goTo }) {
+function Scene4({ goTo }) {
   const [degree, setDegree] = useState(4)
 
   function handleDegreeChange(delta) {
@@ -19,9 +19,9 @@ function Scene3({ goTo }) {
     goTo('/3')
   }
 
-  function handleStartOverClick(event) {
+  function handleContinueClick(event) {
     event.preventDefault()
-    goTo('/1')
+    goTo('/5')
   }
 
   return (
@@ -57,6 +57,7 @@ function Scene3({ goTo }) {
           type="button"
           onClick={handleDegreeChange(-1)}
           disabled={degree === minDegree}
+          className="button-purple"
         >
           Decrease degree
         </button>
@@ -64,7 +65,7 @@ function Scene3({ goTo }) {
           type="button"
           onClick={handleDegreeChange(1)}
           disabled={degree === maxDegree}
-          className="ml-2"
+          className="button-purple ml-2"
         >
           Increase degree
         </button>
@@ -87,17 +88,8 @@ function Scene3({ goTo }) {
             </Link>
           </AppearingText>
           <AppearingText>
-            <a
-              href="https://github.com/dherault/dherault.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source code
-            </a>
-          </AppearingText>
-          <AppearingText>
-            <Link to="/1" onClick={handleStartOverClick}>
-              Start over
+            <Link to="/1" onClick={handleContinueClick}>
+              Continue
             </Link>
           </AppearingText>
         </div>
@@ -124,4 +116,4 @@ function SocialMedia({ name, url, icon }) {
   )
 }
 
-export default Scene3
+export default Scene4
