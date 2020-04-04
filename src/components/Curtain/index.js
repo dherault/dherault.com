@@ -15,7 +15,7 @@ function Curtain({ children }) {
   const [opacity, setOpacity] = useState(1)
   const history = useHistory()
   const location = useLocation()
-  const color = pathnameToColor[location.pathname]
+  const color = pathnameToColor[location.pathname] || 'white'
 
   useEffect(() => {
     setTimeout(() => {
