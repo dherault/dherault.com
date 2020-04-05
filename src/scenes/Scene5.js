@@ -25,7 +25,7 @@ function Scene5({ goTo }) {
       <header className="card">
         <AppearingText color="#3f51b5">
           <h1>
-            I'm actively looking for a remote part-time job.
+            I'm actively looking for a remote full-time job.
           </h1>
         </AppearingText>
         <AppearingText className="mt-3">
