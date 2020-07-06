@@ -8,6 +8,8 @@ function handleCanvas(canvas, mainColor) {
   const height = canvas.height = window.innerHeight
   const backgroundColor = mainColor
   const strokeColor = '#9c27b0'
+  const isMobile = width <= 600
+  const scaleFactor = isMobile ? 0.75 : 1
 
   /* ---
     Data
@@ -35,7 +37,7 @@ function handleCanvas(canvas, mainColor) {
     for (let i = 1; i < 32 + 1; i += 2) {
       circles.push({
         t: PI,
-        r: startingRho / i,
+        r: startingRho / i * scaleFactor,
         a: i * PI,
       })
     }
@@ -52,7 +54,7 @@ function handleCanvas(canvas, mainColor) {
 
       circles.push({
         t: PI / 2,
-        r: startingRho / (n * n),
+        r: startingRho / (n * n) * scaleFactor,
         a: i % 2 ? n * PI : -n * PI,
       })
     }
@@ -67,7 +69,7 @@ function handleCanvas(canvas, mainColor) {
     for (let i = 1; i < 32; i += 1) {
       circles.push({
         t: 0,
-        r: startingRho / i,
+        r: startingRho / i * scaleFactor,
         a: i * PI,
       })
     }
@@ -108,7 +110,7 @@ function handleCanvas(canvas, mainColor) {
 
       const initialHeight = (k + 1) * height / (data.length + 1)
       let previousCoordinates = {
-        x: 2 * width / 5,
+        x: (isMobile ? 1.5 : 2) * width / 5,
         y: initialHeight,
       }
 
