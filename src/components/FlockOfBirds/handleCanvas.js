@@ -97,7 +97,6 @@ function handleCanvas(canvas) {
   function draw() {
     _.fillStyle = backgroundColor
     _.fillRect(0, 0, width, height)
-    // _.clearRect(0, 0, width, height)
 
     birds.forEach(bird => bird.draw(_))
   }

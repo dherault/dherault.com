@@ -163,6 +163,7 @@ function handleCanvas(canvas, mode) {
     Polyhedron creation
   --- */
 
+  // Hard work and dedication pay off
   function createPolyhedron(nSides, dihedralAngle) {
     const faces = [createPolygonNodes(nSides, oOrigin, forward)]
     const centers = [oOrigin]

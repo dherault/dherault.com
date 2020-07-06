@@ -24,6 +24,7 @@ function handleCanvas(canvas, degree = 4) {
     function createCurveHyperParameters(size, rotation, invert) {
       const s = size / 2
       const z = s / 2
+      // Inspiration is a beauty
       const rotationXorInvert = rotation && !invert || !rotation && invert
 
       const hyperParameters = [

@@ -23,7 +23,7 @@ function Scene1({ goTo }) {
         </AppearingText>
         <AppearingText color="#2196f3" className="mt-2">
           <h2>
-            JavaScript developper
+            JavaScript architect
           </h2>
         </AppearingText>
         <AppearingText color="#2196f3" className="mt-2">
@@ -33,7 +33,7 @@ function Scene1({ goTo }) {
         </AppearingText>
         <AppearingText color="#2196f3" className="mt-2">
           <h2>
-          +33 666 000 577
+            +33 666 000 577
           </h2>
         </AppearingText>
       </header>
