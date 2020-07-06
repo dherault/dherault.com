@@ -189,6 +189,20 @@ canvas {
     max-width: 100%;
   }
 
+  .card-polyhedrons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 120px;
+  }
+
+  .card-polyhedrons > button {
+    width: calc(50% - 0.5rem);
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
   .mobile-margin-top-fix {
     margin-top: 1.5rem !important;
   }

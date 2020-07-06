@@ -45,7 +45,7 @@ function Scene5({ goTo, color }) {
         </AppearingText>
       </header>
 
-      <section className="card y8s">
+      <section className="card y8s card-polyhedrons">
         <button
           type="button"
           onClick={() => setMode('dance')}

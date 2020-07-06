@@ -6,7 +6,9 @@ function handleCanvas(canvas, mode, mainColor) {
 
   const width = canvas.width = window.innerWidth
   const height = canvas.height = window.innerHeight
-  const nPolyhedron = Math.round(24 * width / 1920)
+  const isMobile = width <= 600
+
+  const nPolyhedron = Math.round((isMobile ? 52 : 24) * width / 1920)
 
   const backgroundColor = mainColor
   const verticeColor = 'white'
@@ -24,6 +26,14 @@ function handleCanvas(canvas, mode, mainColor) {
     dodecahedron: [12, 32],
   }
 
+  const nameToMobileScaleFactor = {
+    hexahedron: 0.8,
+    tetrahedron: 1,
+    octahedron: 1,
+    icosahedron: 0.7,
+    dodecahedron: 0.5,
+  }
+
   const patrons = {
     hexahedron: createPolyhedron(4, PI / 2),
     tetrahedron: createPolyhedron(3, acos(1 / 3)),
@@ -39,7 +49,7 @@ function handleCanvas(canvas, mode, mainColor) {
   let polyhedron
 
   if (mode !== 'dance') {
-    polyhedron = createPolyhedronInstance(patrons[mode], nameToScale[mode], true)
+    polyhedron = createPolyhedronInstance(patrons[mode], nameToScale[mode], mode)
   }
 
   for (let i = 0; i < nPolyhedron; i++) {
@@ -233,10 +243,10 @@ function handleCanvas(canvas, mode, mainColor) {
     return nodes
   }
 
-  function createPolyhedronInstance(patron, scaleArray, fullScreen) {
-    const scaleFactor = fullScreen ? 200 : randomRange(...scaleArray)
-    const params = fullScreen ? [0, 0, 0] : suffle([0, randomRange(0, TAU), randomRange(0, TAU)])
-    const dParams = fullScreen ? [PI / 512, PI / 512, 0] : suffle([0, randomRange(0, PI / 128), randomRange(0, PI / 128)])
+  function createPolyhedronInstance(patron, scaleArray, modeName) {
+    const scaleFactor = modeName ? 200 * (isMobile ? nameToMobileScaleFactor[modeName] : 1) : randomRange(...scaleArray)
+    const params = modeName ? [0, 0, 0] : suffle([0, randomRange(0, TAU), randomRange(0, TAU)])
+    const dParams = modeName ? [PI / 512, PI / 512, 0] : suffle([0, randomRange(0, PI / 128), randomRange(0, PI / 128)])
 
     return {
       faces: patron.map(({ center, nodes }) => ({
@@ -250,10 +260,10 @@ function handleCanvas(canvas, mode, mainColor) {
       da: dParams[0],
       db: dParams[1],
       dc: dParams[2],
-      x: fullScreen ? width / 2 : randomInteger(0, width),
-      y: fullScreen ? height / 2 : randomInteger(0, height),
-      dx: fullScreen ? 0 : randomArray(danceSpeeds),
-      dy: fullScreen ? 0 : randomArray(danceSpeeds),
+      x: modeName ? width / 2 : randomInteger(0, width),
+      y: modeName ? height / 2 : randomInteger(0, height),
+      dx: modeName ? 0 : randomArray(danceSpeeds),
+      dy: modeName ? 0 : randomArray(danceSpeeds),
     }
   }
 
