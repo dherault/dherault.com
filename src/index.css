@@ -134,6 +134,10 @@ canvas {
 
 @media only screen and (max-width: 600px) {
 
+  html {
+    overflow: hidden;
+  }
+
   .mobile-visibility {
     display: block;
     padding: 3px;
