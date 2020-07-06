@@ -129,7 +129,6 @@ canvas {
   right: 0;
   z-index: 1;
   background-color: white;
-  transition: color 0.666s ease-in-out 0.666s;
 }
 
 @media only screen and (max-width: 600px) {
@@ -141,7 +140,7 @@ canvas {
   .mobile-visibility {
     display: block;
     padding: 3px;
-    transition: opacity 0.333s ease-in-out;
+    transition: opacity 0.333s ease-in-out, color 0.666s ease-in-out;
   }
 
   .mobile-visible > div > header,
