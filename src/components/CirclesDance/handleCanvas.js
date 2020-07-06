@@ -108,7 +108,7 @@ function handleCanvas(canvas, mainColor) {
 
       const initialHeight = (k + 1) * height / (data.length + 1)
       let previousCoordinates = {
-        x: width / 3,
+        x: 2 * width / 5,
         y: initialHeight,
       }
 
@@ -120,7 +120,7 @@ function handleCanvas(canvas, mainColor) {
         previousCoordinates = nextCoordinates
       })
 
-      const point = { x: 2 * width / 3, y: previousCoordinates.y }
+      const point = { x: 3 * width / 5, y: previousCoordinates.y }
 
       _.moveTo(previousCoordinates.x, previousCoordinates.y)
       _.lineTo(point.x, point.y)
