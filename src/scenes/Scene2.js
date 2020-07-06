@@ -84,7 +84,7 @@ function Scene2({ goTo }) {
         <AppearingText className="mt-2">
           How can computers prevent underflow while rendering fractals, i.e. handling numbers that are too low for their processor to handle?
           <br />
-          Response is in <a href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L146" target="_blank" rel="noopener noreferrer">the code</a>.
+          Response is in <a href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L172" target="_blank" rel="noopener noreferrer">the code</a>.
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>
