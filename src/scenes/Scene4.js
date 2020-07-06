@@ -7,7 +7,7 @@ import AppearingText from '../components/AppearingText'
 const minDegree = 1
 const maxDegree = 6
 
-function Scene4({ goTo }) {
+function Scene4({ goTo, color }) {
   const [degree, setDegree] = useState(4)
 
   function handleDegreeChange(delta) {
@@ -27,10 +27,10 @@ function Scene4({ goTo }) {
   return (
     <div className="Scene">
 
-      <HilbertCurve degree={degree} />
+      <HilbertCurve degree={degree} color={color} />
 
       <header className="card">
-        <AppearingText color="#673ab7">
+        <AppearingText color={color}>
           <h1>
             Social Media
           </h1>

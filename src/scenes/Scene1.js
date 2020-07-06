@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import FlockOfBirds from '../components/FlockOfBirds'
 import AppearingText from '../components/AppearingText'
 
-function Scene1({ goTo }) {
+function Scene1({ goTo, color }) {
   function handleContinueClick(event) {
     event.preventDefault()
     goTo('/2')
@@ -13,7 +13,7 @@ function Scene1({ goTo }) {
   return (
     <div className="Scene">
 
-      <FlockOfBirds />
+      <FlockOfBirds color={color} />
 
       <header className="card">
         <AppearingText>
@@ -21,17 +21,17 @@ function Scene1({ goTo }) {
             David Hérault
           </h1>
         </AppearingText>
-        <AppearingText color="#2196f3" className="mt-2">
+        <AppearingText color={color} className="mt-2">
           <h2>
             JavaScript architect freelancer
           </h2>
         </AppearingText>
-        <AppearingText color="#2196f3" className="mt-2">
+        <AppearingText color={color} className="mt-2">
           <h2>
             dherault@gmail.com
           </h2>
         </AppearingText>
-        <AppearingText color="#2196f3" className="mt-2">
+        <AppearingText color={color} className="mt-2">
           <h2>
             +33 666 000 577
           </h2>

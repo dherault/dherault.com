@@ -42,19 +42,19 @@ function App() {
             </div>
             <Switch>
               <Route exact path="/1">
-                <Scene1 goTo={goTo} />
+                <Scene1 goTo={goTo} color={color} />
               </Route>
               <Route exact path="/2">
-                <Scene2 goTo={goTo} />
+                <Scene2 goTo={goTo} color={color} />
               </Route>
               <Route exact path="/3">
-                <Scene3 goTo={goTo} />
+                <Scene3 goTo={goTo} color={color} />
               </Route>
               <Route exact path="/4">
-                <Scene4 goTo={goTo} />
+                <Scene4 goTo={goTo} color={color} />
               </Route>
               <Route exact path="/5">
-                <Scene5 goTo={goTo} />
+                <Scene5 goTo={goTo} color={color} />
               </Route>
               <Redirect exact from="/" to="/1" />
               <NotFound />

@@ -3,13 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 
 import './index.css'
 
-const pathnameToColor = {
-  '/1': '#2196f3',
-  '/2': '#e30b5d',
-  '/3': '#c6ff00',
-  '/4': '#673ab7',
-  '/5': '#3f51b5',
-}
+import pathnameToColor from '../../colors'
 
 function Curtain({ children }) {
   const [opacity, setOpacity] = useState(1)

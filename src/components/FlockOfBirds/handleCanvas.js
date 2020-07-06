@@ -1,4 +1,4 @@
-function handleCanvas(canvas) {
+function handleCanvas(canvas, mainColor) {
   const _ = canvas.getContext('2d')
 
   const width = canvas.width = window.innerWidth
@@ -56,7 +56,7 @@ function handleCanvas(canvas) {
   const birdColor = 'white'
   const flockingDistance = 150
   const nearingDistance = birdHeight
-  const backgroundColor = '#2196f3'
+  const backgroundColor = mainColor
 
   class Bird {
     constructor() {

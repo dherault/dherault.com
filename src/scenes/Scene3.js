@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import CirclesDance from '../components/CirclesDance'
 import AppearingText from '../components/AppearingText'
 
-function Scene3({ goTo }) {
+function Scene3({ goTo, color }) {
 
   function handleGoBackClick(event) {
     event.preventDefault()
@@ -19,10 +19,10 @@ function Scene3({ goTo }) {
   return (
     <div className="Scene">
 
-      <CirclesDance />
+      <CirclesDance color={color} />
 
       <header className="card">
-        <AppearingText color="#c6ff00">
+        <AppearingText color={color}>
           <h1>
             Hobbies
           </h1>

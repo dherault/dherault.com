@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Polyhedrons from '../components/Polyhedrons'
 import AppearingText from '../components/AppearingText'
 
-function Scene5({ goTo }) {
+function Scene5({ goTo, color }) {
   const [mode, setMode] = useState('dance')
 
   function handleGoBackClick(event) {
@@ -20,10 +20,10 @@ function Scene5({ goTo }) {
   return (
     <div className="Scene">
 
-      <Polyhedrons mode={mode} />
+      <Polyhedrons mode={mode} color={color} />
 
       <header className="card">
-        <AppearingText color="#3f51b5">
+        <AppearingText color={color}>
           <h1>
             I'm actively looking for jobs
           </h1>

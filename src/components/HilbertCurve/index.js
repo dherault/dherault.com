@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from 'react'
 
 import handleCanvas from './handleCanvas'
 
-function HilberCurve({ degree }) {
+function HilberCurve({ degree, color }) {
   const canvasRef = useRef()
 
-  useEffect(() => handleCanvas(canvasRef.current, degree), [degree])
+  useEffect(() => handleCanvas(canvasRef.current, degree, color), [degree, color])
 
   return (
     <canvas ref={canvasRef} />

@@ -5,7 +5,7 @@ import GitHubButton from 'react-github-btn'
 import KoshSnowflake from '../components/KoshSnowflake'
 import AppearingText from '../components/AppearingText'
 
-function Scene2({ goTo }) {
+function Scene2({ goTo, color }) {
 
   function handleGoBackClick(event) {
     event.preventDefault()
@@ -20,7 +20,7 @@ function Scene2({ goTo }) {
   return (
     <div className="Scene">
 
-      <KoshSnowflake />
+      <KoshSnowflake color={color} />
 
       <header className="card">
         <AppearingText>
@@ -28,7 +28,7 @@ function Scene2({ goTo }) {
             I <span role="img" aria-label="love">❤️</span> open-source software
           </h1>
         </AppearingText>
-        <AppearingText color="#e30b5d" className="mt-3 mb-2">
+        <AppearingText color={color} className="mt-3 mb-2">
           <h2>
             Here are a few of my contributions:
           </h2>

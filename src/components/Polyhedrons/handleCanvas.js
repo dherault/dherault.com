@@ -1,4 +1,4 @@
-function handleCanvas(canvas, mode) {
+function handleCanvas(canvas, mode, mainColor) {
   const _ = canvas.getContext('2d')
 
   const { cos, sin, acos, atan, sqrt, PI } = Math
@@ -8,9 +8,9 @@ function handleCanvas(canvas, mode) {
   const height = canvas.height = window.innerHeight
   const nPolyhedron = Math.round(24 * width / 1920)
 
-  const backgroundColor = '#3f51b5'
+  const backgroundColor = mainColor
   const verticeColor = 'white'
-  const faceColor = '#3f51b5'
+  const faceColor = mainColor
 
   const oOrigin = { x: 0, y: 0, z: 0 }
   const forward = { x: 0, y: 0, z: 1 }

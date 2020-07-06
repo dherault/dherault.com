@@ -1,4 +1,4 @@
-function handleCanvas(canvas) {
+function handleCanvas(canvas, mainColor) {
   const { sin, cos, PI } = Math
   const TAU = 2 * PI
 
@@ -6,7 +6,7 @@ function handleCanvas(canvas) {
 
   const width = canvas.width = window.innerWidth
   const height = canvas.height = window.innerHeight
-  const backgroundColor = '#c6ff00'
+  const backgroundColor = mainColor
   const strokeColor = '#9c27b0'
 
   /* ---

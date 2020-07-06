@@ -1,4 +1,4 @@
-function handleCanvas(canvas, degree = 4) {
+function handleCanvas(canvas, degree = 4, mainColor) {
   const _ = canvas.getContext('2d')
 
   const halfPi = Math.PI / 2
@@ -6,7 +6,7 @@ function handleCanvas(canvas, degree = 4) {
   const height = canvas.height = window.innerHeight
   const size = Math.min(width * 0.75, height * 0.75)
 
-  const backgroundColor = '#673ab7'
+  const backgroundColor = mainColor
   const strokeColor = 'white'
 
   _.fillStyle = backgroundColor

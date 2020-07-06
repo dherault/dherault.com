@@ -1,7 +1,7 @@
-function handleCanvas(canvas) {
+function handleCanvas(canvas, mainColor) {
   const _ = canvas.getContext('2d')
 
-  const backgroundColor = '#e30b5d'
+  const backgroundColor = mainColor
   const strokeColor = 'white'
 
   let width = canvas.width = window.innerWidth
