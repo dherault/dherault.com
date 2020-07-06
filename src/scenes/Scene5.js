@@ -25,7 +25,7 @@ function Scene5({ goTo }) {
       <header className="card">
         <AppearingText color="#3f51b5">
           <h1>
-            I'm actively looking for a remote full-time job.
+            I'm actively looking for jobs
           </h1>
         </AppearingText>
         <AppearingText className="mt-3">
@@ -35,7 +35,13 @@ function Scene5({ goTo }) {
           I specialize in Node.js, ReactJS, React Native, DevOps and more.
         </AppearingText>
         <AppearingText className="mt-2">
-          My timezone will change over time as I plan to travel around the world.
+          <a
+            href="https://www.toptal.com/resume/david-herault"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hire me!
+          </a>
         </AppearingText>
       </header>
 

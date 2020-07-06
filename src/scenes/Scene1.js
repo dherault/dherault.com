@@ -23,7 +23,7 @@ function Scene1({ goTo }) {
         </AppearingText>
         <AppearingText color="#2196f3" className="mt-2">
           <h2>
-            JavaScript architect
+            JavaScript architect freelancer
           </h2>
         </AppearingText>
         <AppearingText color="#2196f3" className="mt-2">
