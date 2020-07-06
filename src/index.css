@@ -185,6 +185,10 @@ canvas {
     right: 0;
     max-width: 100%;
   }
+
+  .mobile-margin-top-fix {
+    margin-top: 1rem !important;
+  }
 }
 
 .relative {

@@ -137,7 +137,7 @@ function Repository({ name, url, children }) {
           </GitHubButton>
         </div>
       </div>
-      <div className="mt-2">
+      <div className="mt-2 mobile-margin-top-fix">
         <AppearingText>
           {children}
         </AppearingText>
