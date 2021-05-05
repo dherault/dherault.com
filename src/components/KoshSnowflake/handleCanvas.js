@@ -1,11 +1,27 @@
+import getCanvasDpr from '../../utils/getCanvasDpr'
+
 function handleCanvas(canvas, mainColor) {
   const _ = canvas.getContext('2d')
 
   const backgroundColor = mainColor
   const strokeColor = 'white'
 
-  let width = canvas.width = window.innerWidth
-  let height = canvas.height = window.innerHeight
+  const dpr = getCanvasDpr(_)
+
+  canvas.width = window.innerWidth * dpr
+  canvas.height = window.innerHeight * dpr
+
+  canvas.style.width = `${window.innerWidth}px`
+  canvas.style.height = `${window.innerHeight}px`
+
+  const initialWidth = window.innerWidth
+  const initialHeight = window.innerHeight
+
+  let width = window.innerWidth
+  let height = window.innerHeight
+
+  _.scale(dpr, dpr)
+
   const displayRatio = height / width
 
   let xMouse = 0
@@ -16,18 +32,18 @@ function handleCanvas(canvas, mainColor) {
   let isDezooming = false
 
   const piByThree = Math.PI / 3
-  const xStart = canvas.width / 3
-  const length = Math.min(canvas.width / 3, canvas.height * 0.75)
+  const xStart = initialWidth / 3
+  const length = Math.min(initialWidth / 3, initialHeight * 0.75)
   const sideLength = length / (2 * (1 + Math.cos(piByThree)))
   const heightLength = length * Math.cos(piByThree) + sideLength * Math.sin(piByThree) / 3
-  const yStart = (canvas.height - heightLength) / 2
+  const yStart = (initialHeight - heightLength) / 2
 
   function scaleX(x) {
-    return (x - xWindow) * canvas.width / width
+    return (x - xWindow) * initialWidth / width
   }
 
   function scaleY(y) {
-    return (y - yWindow) * canvas.height / height
+    return (y - yWindow) * initialHeight / height
   }
 
   function triangle(_, n, x, y, l, a = 0) {
@@ -74,11 +90,11 @@ function handleCanvas(canvas, mainColor) {
   }
 
   function draw() {
-    const depth = Math.round(4 + 0.9 * Math.log(canvas.width / width))
+    const depth = Math.round(4 + 0.9 * Math.log(initialWidth / width))
 
     _.fillStyle = backgroundColor
     _.strokeStyle = strokeColor
-    _.fillRect(0, 0, canvas.width, canvas.height)
+    _.fillRect(0, 0, initialWidth, initialHeight)
     _.beginPath()
     _.moveTo(xStart, yStart)
     triangle(_, depth, xStart, yStart, length)
@@ -89,20 +105,20 @@ function handleCanvas(canvas, mainColor) {
   }
 
   function boundXWindow(x) {
-    return Math.max(0, Math.min(canvas.width - width, x))
+    return Math.max(0, Math.min(initialWidth - width, x))
   }
 
   function boundYWindow(y) {
-    return Math.max(0, Math.min(canvas.height - height, y))
+    return Math.max(0, Math.min(initialHeight - height, y))
   }
 
   function mouseMoveListener(event) {
-    xMouse = event.clientX * width / canvas.width + xWindow
-    yMouse = event.clientY * height / canvas.height + yWindow
+    xMouse = event.clientX * width / initialWidth + xWindow
+    yMouse = event.clientY * height / initialHeight + yWindow
 
     if (isPanning) {
-      xWindow = boundXWindow(xWindow - event.movementX * width / canvas.width)
-      yWindow = boundYWindow(yWindow - event.movementY * height / canvas.height)
+      xWindow = boundXWindow(xWindow - event.movementX * width / initialWidth)
+      yWindow = boundYWindow(yWindow - event.movementY * height / initialHeight)
     }
 
     draw()
@@ -126,14 +142,14 @@ function handleCanvas(canvas, mainColor) {
   }
 
   function zoom(factor) {
-    width = Math.max(0, Math.min(canvas.width, width * factor))
+    width = Math.max(0, Math.min(initialWidth, width * factor))
     height = width * displayRatio
     xWindow = boundXWindow(xMouse - (xMouse - xWindow) * factor)
     yWindow = boundYWindow(yMouse - (yMouse - yWindow) * factor)
   }
 
   function dezoomToStart() {
-    if (isDezooming || width === canvas.width) return
+    if (isDezooming || width === initialWidth) return
 
     isDezooming = true
     removeEventListeners()
@@ -142,7 +158,7 @@ function handleCanvas(canvas, mainColor) {
       zoom(1.01)
       draw()
 
-      if (width === canvas.width) {
+      if (width === initialWidth) {
         clearInterval(intervalId)
         addEventListeners()
       }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import GitHubButton from 'react-github-btn'
 
@@ -114,7 +114,7 @@ function Repository({ name, url, children }) {
 
   return (
     <>
-      <div className="mt-3 x8b w100">
+      <div className="mt-3 x2b w100">
         <AppearingText>
           <a
             href={url}

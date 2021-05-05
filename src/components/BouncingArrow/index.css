@@ -1,0 +1,22 @@
+.BouncingArrow {
+  position: relative;
+}
+
+.BouncingArrow-arrow {
+  position: relative;
+  animation: ease infinite;
+  animation-name: run;
+  animation-duration: 1.5s;
+}
+
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  50%{
+    left : -100%;
+  }
+  100%{
+    left: 0;
+  }
+}

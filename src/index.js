@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import 'flexpad/dist/flexpad.min.css'
 import 'bootstrap-spacing-utils'

@@ -1,11 +1,24 @@
+import getCanvasDpr from '../../utils/getCanvasDpr'
+
 function handleCanvas(canvas, mainColor) {
   const { sin, cos, PI } = Math
   const TAU = 2 * PI
 
   const _ = canvas.getContext('2d')
 
-  const width = canvas.width = window.innerWidth
-  const height = canvas.height = window.innerHeight
+  const dpr = getCanvasDpr(_)
+
+  canvas.width = window.innerWidth * dpr
+  canvas.height = window.innerHeight * dpr
+
+  canvas.style.width = `${window.innerWidth}px`
+  canvas.style.height = `${window.innerHeight}px`
+
+  const width = window.innerWidth
+  const height = window.innerHeight
+
+  _.scale(dpr, dpr)
+
   const backgroundColor = mainColor
   const strokeColor = '#9c27b0'
   const isMobile = width <= 600

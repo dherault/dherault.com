@@ -1,9 +1,22 @@
+import getCanvasDpr from '../../utils/getCanvasDpr'
+
 function handleCanvas(canvas, degree = 4, mainColor) {
   const _ = canvas.getContext('2d')
 
+  const dpr = getCanvasDpr(_)
+
+  canvas.width = window.innerWidth * dpr
+  canvas.height = window.innerHeight * dpr
+
+  canvas.style.width = `${window.innerWidth}px`
+  canvas.style.height = `${window.innerHeight}px`
+
+  const width = window.innerWidth
+  const height = window.innerHeight
+
+  _.scale(dpr, dpr)
+
   const halfPi = Math.PI / 2
-  const width = canvas.width = window.innerWidth
-  const height = canvas.height = window.innerHeight
   const size = Math.min(width * 0.75, height * 0.75)
 
   const backgroundColor = mainColor

@@ -1,8 +1,8 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 import FlockOfBirds from '../components/FlockOfBirds'
 import AppearingText from '../components/AppearingText'
+import BouncingArrow from '../components/BouncingArrow'
 
 function Scene1({ goTo, color }) {
   function handleContinueClick(event) {
@@ -23,7 +23,17 @@ function Scene1({ goTo, color }) {
         </AppearingText>
         <AppearingText color={color} className="mt-2">
           <h2>
-            JavaScript architect freelancer
+            CEO at Via Bellum
+          </h2>
+        </AppearingText>
+        <AppearingText color={color} className="mt-2">
+          <h2>
+            CEO at Sensual Education
+          </h2>
+        </AppearingText>
+        <AppearingText color={color} className="mt-2">
+          <h2>
+            JavaScript Architect Freelancer
           </h2>
         </AppearingText>
         <AppearingText color={color} className="mt-2">
@@ -52,6 +62,9 @@ function Scene1({ goTo, color }) {
           You must be versatile like a bird.
         </AppearingText>
         <div className="x6 w100 mt-3">
+          <div className="mr-1">
+            <BouncingArrow />
+          </div>
           <AppearingText>
             <Link to="/2" onClick={handleContinueClick}>
               Continue
