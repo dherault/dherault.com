@@ -41,22 +41,56 @@ function App() {
               <strong>{isHidden ? 'Show' : 'Hide'} content</strong>
             </div>
             <Switch>
-              <Route exact path="/1">
-                <Scene1 goTo={goTo} color={color} />
+              <Route
+                exact
+                path="/1"
+              >
+                <Scene1
+                  goTo={goTo}
+                  color={color}
+                />
               </Route>
-              <Route exact path="/2">
-                <Scene2 goTo={goTo} color={color} />
+              <Route
+                exact
+                path="/2"
+              >
+                <Scene2
+                  goTo={goTo}
+                  color={color}
+                />
               </Route>
-              <Route exact path="/3">
-                <Scene3 goTo={goTo} color={color} />
+              <Route
+                exact
+                path="/3"
+              >
+                <Scene3
+                  goTo={goTo}
+                  color={color}
+                />
               </Route>
-              <Route exact path="/4">
-                <Scene4 goTo={goTo} color={color} />
+              <Route
+                exact
+                path="/4"
+              >
+                <Scene4
+                  goTo={goTo}
+                  color={color}
+                />
               </Route>
-              <Route exact path="/5">
-                <Scene5 goTo={goTo} color={color} />
+              <Route
+                exact
+                path="/5"
+              >
+                <Scene5
+                  goTo={goTo}
+                  color={color}
+                />
               </Route>
-              <Redirect exact from="/" to="/1" />
+              <Redirect
+                exact
+                from="/"
+                to="/1"
+              />
               <NotFound />
             </Switch>
           </div>

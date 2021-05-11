@@ -12,7 +12,10 @@ function FlockOfBirds({ color }) {
   }, [color])
 
   return (
-    <canvas ref={canvasRef} className="cursor-drag" />
+    <canvas
+      ref={canvasRef}
+      className="cursor-drag"
+    />
   )
 }
 

@@ -144,7 +144,6 @@ function handleCanvas(canvas, mainColor) {
       points.push(point)
 
       points.forEach((p, i) => {
-
         if (i + 1 < points.length && distanceSquared(p, points[i + 1]) > 1) {
           _.moveTo(p.x, p.y)
           _.lineTo(points[i + 1].x, points[i + 1].y)

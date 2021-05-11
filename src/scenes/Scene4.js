@@ -27,7 +27,10 @@ function Scene4({ goTo, color }) {
   return (
     <div className="Scene">
 
-      <HilbertCurve degree={degree} color={color} />
+      <HilbertCurve
+        degree={degree}
+        color={color}
+      />
 
       <header className="card">
         <AppearingText color={color}>
@@ -83,12 +86,18 @@ function Scene4({ goTo, color }) {
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>
-            <Link to="/3" onClick={handleGoBackClick}>
+            <Link
+              to="/3"
+              onClick={handleGoBackClick}
+            >
               Go back
             </Link>
           </AppearingText>
           <AppearingText>
-            <Link to="/1" onClick={handleContinueClick}>
+            <Link
+              to="/1"
+              onClick={handleContinueClick}
+            >
               Continue
             </Link>
           </AppearingText>

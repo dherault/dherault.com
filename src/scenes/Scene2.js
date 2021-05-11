@@ -25,10 +25,20 @@ function Scene2({ goTo, color }) {
       <header className="card">
         <AppearingText>
           <h1>
-            I <span role="img" aria-label="love">❤️</span> open-source software
+            I
+            <span
+              role="img"
+              aria-label="love"
+            >
+              ❤️
+            </span>
+            open-source software
           </h1>
         </AppearingText>
-        <AppearingText color={color} className="mt-3 mb-2">
+        <AppearingText
+          color={color}
+          className="mt-3 mb-2"
+        >
           <h2>
             Here are a few of my contributions:
           </h2>
@@ -84,16 +94,29 @@ function Scene2({ goTo, color }) {
         <AppearingText className="mt-2">
           How can computers prevent underflow while rendering fractals, i.e. handling numbers that are too low for their processor to handle?
           <br />
-          Response is in <a href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L172" target="_blank" rel="noopener noreferrer">the code</a>.
+          Response is in
+          <a
+            href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L172"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            the code
+          </a>.
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>
-            <Link to="/1" onClick={handleGoBackClick}>
+            <Link
+              to="/1"
+              onClick={handleGoBackClick}
+            >
               Go back
             </Link>
           </AppearingText>
           <AppearingText>
-            <Link to="/3" onClick={handleContinueClick}>
+            <Link
+              to="/3"
+              onClick={handleContinueClick}
+            >
               Continue
             </Link>
           </AppearingText>
@@ -126,7 +149,10 @@ function Repository({ name, url, children }) {
             </strong>
           </a>
         </AppearingText>
-        <div className="github-button-wrapper" style={{ opacity }}>
+        <div
+          className="github-button-wrapper"
+          style={{ opacity }}
+        >
           <GitHubButton
             href={url}
             data-icon="octicon-star"

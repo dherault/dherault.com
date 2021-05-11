@@ -20,7 +20,10 @@ function Scene5({ goTo, color }) {
   return (
     <div className="Scene">
 
-      <Polyhedrons mode={mode} color={color} />
+      <Polyhedrons
+        mode={mode}
+        color={color}
+      />
 
       <header className="card">
         <AppearingText color={color}>
@@ -99,7 +102,10 @@ function Scene5({ goTo, color }) {
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>
-            <Link to="/3" onClick={handleGoBackClick}>
+            <Link
+              to="/3"
+              onClick={handleGoBackClick}
+            >
               Go back
             </Link>
           </AppearingText>
@@ -113,7 +119,10 @@ function Scene5({ goTo, color }) {
             </a>
           </AppearingText>
           <AppearingText>
-            <Link to="/1" onClick={handleStartOverClick}>
+            <Link
+              to="/1"
+              onClick={handleStartOverClick}
+            >
               Start over
             </Link>
           </AppearingText>

@@ -64,16 +64,27 @@ function Scene3({ goTo, color }) {
           Can you see the beauty of it?
         </AppearingText>
         <AppearingText className="mt-2">
-          A <a href="https://en.wikipedia.org/wiki/Fourier_series" target="_blank" rel="noopener noreferrer">Fourrier serie </a> is an weighted summation of harmonically related sinudoids.
+          A <a
+            href="https://en.wikipedia.org/wiki/Fourier_series"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Fourrier serie 
+            </a> is an weighted summation of harmonically related sinudoids.
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>
-            <Link to="/2" onClick={handleGoBackClick}>
+            <Link
+              to="/2"
+              onClick={handleGoBackClick}
+            >
               Go back
             </Link>
           </AppearingText>
           <AppearingText>
-            <Link to="/4" onClick={handleContinueClick}>
+            <Link
+              to="/4"
+              onClick={handleContinueClick}
+            >
               Continue
             </Link>
           </AppearingText>

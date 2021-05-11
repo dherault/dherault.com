@@ -21,27 +21,42 @@ function Scene1({ goTo, color }) {
             David Hérault
           </h1>
         </AppearingText>
-        <AppearingText color={color} className="mt-2">
+        <AppearingText
+          color={color}
+          className="mt-2"
+        >
           <h2>
             CEO at Via Bellum
           </h2>
         </AppearingText>
-        <AppearingText color={color} className="mt-2">
+        <AppearingText
+          color={color}
+          className="mt-2"
+        >
           <h2>
             CEO at Sensual Education
           </h2>
         </AppearingText>
-        <AppearingText color={color} className="mt-2">
+        <AppearingText
+          color={color}
+          className="mt-2"
+        >
           <h2>
             JavaScript Architect Freelancer
           </h2>
         </AppearingText>
-        <AppearingText color={color} className="mt-2">
+        <AppearingText
+          color={color}
+          className="mt-2"
+        >
           <h2>
             dherault@gmail.com
           </h2>
         </AppearingText>
-        <AppearingText color={color} className="mt-2">
+        <AppearingText
+          color={color}
+          className="mt-2"
+        >
           <h2>
             +33 666 000 577
           </h2>
@@ -66,7 +81,10 @@ function Scene1({ goTo, color }) {
             <BouncingArrow />
           </div>
           <AppearingText>
-            <Link to="/2" onClick={handleContinueClick}>
+            <Link
+              to="/2"
+              onClick={handleContinueClick}
+            >
               Continue
             </Link>
           </AppearingText>
