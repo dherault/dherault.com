@@ -64,12 +64,16 @@ function Scene3({ goTo, color }) {
           Can you see the beauty of it?
         </AppearingText>
         <AppearingText className="mt-2">
-          A <a
+          A
+          <a
             href="https://en.wikipedia.org/wiki/Fourier_series"
             target="_blank"
             rel="noopener noreferrer"
-          >Fourrier serie 
-            </a> is an weighted summation of harmonically related sinudoids.
+            className="mx-0h"
+          >
+            Fourrier serie
+          </a>
+          is an weighted summation of harmonically related sinudoids.
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>

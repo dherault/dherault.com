@@ -99,6 +99,7 @@ function Scene2({ goTo, color }) {
             href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L172"
             target="_blank"
             rel="noopener noreferrer"
+            className="ml-0h"
           >
             the code
           </a>.

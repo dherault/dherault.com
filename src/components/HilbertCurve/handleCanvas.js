@@ -1,6 +1,6 @@
 import getCanvasDpr from '../../utils/getCanvasDpr'
 
-function handleCanvas(canvas, degree = 4, mainColor) {
+function handleCanvas(canvas, degree = 4, mainColor = 'blue') {
   const _ = canvas.getContext('2d')
 
   const dpr = getCanvasDpr(_)

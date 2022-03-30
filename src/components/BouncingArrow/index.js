@@ -1,6 +1,6 @@
 import './index.css'
 
-import Emoji from 'react-apple-emojis'
+import { Emoji } from 'react-apple-emojis'
 
 function BouncingArrow() {
   return (
