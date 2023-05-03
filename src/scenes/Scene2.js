@@ -29,6 +29,7 @@ function Scene2({ goTo, color }) {
             <span
               role="img"
               aria-label="love"
+              className="mx-1"
             >
               ❤️
             </span>

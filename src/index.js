@@ -32,7 +32,7 @@ function App() {
   return (
     <EmojiProvider
       data={{
-        'backhand-index-pointing-right': 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/285/backhand-index-pointing-right_1f449.png',
+        'backhand-index-pointing-right': 'https://em-content.zobj.net/thumbs/240/apple/354/backhand-index-pointing-right_1f449.png',
       }}
     >
       <Router>
