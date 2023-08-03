@@ -14,7 +14,6 @@ function Scene1({ goTo, color }) {
     <div className="Scene">
 
       <FlockOfBirds color={color} />
-
       <header className="card">
         <AppearingText>
           <h1>
@@ -46,7 +45,6 @@ function Scene1({ goTo, color }) {
           </h2>
         </AppearingText>
       </header>
-
       <article className="card">
         <AppearingText>
           Birds fly in flocks, they tend to follow the bird in front of them.

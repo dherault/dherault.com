@@ -43,7 +43,11 @@ function App() {
                 className="mobile-visibility"
                 style={{ color }}
               >
-                <strong>{isHidden ? 'Show' : 'Hide'} content</strong>
+                <strong>
+                  {isHidden ? 'Show' : 'Hide'}
+                  {' '}
+                  content
+                </strong>
               </div>
               <Switch>
                 <Route

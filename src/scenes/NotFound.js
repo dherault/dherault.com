@@ -6,7 +6,11 @@ function NotFound() {
       <h1>
         Not Found
       </h1>
-      <div className="mt-5">You should go to <Link to="/">Home</Link>.</div>
+      <div className="mt-5">
+        You should go to
+        <Link to="/">Home</Link>
+        .
+      </div>
     </div>
   )
 }

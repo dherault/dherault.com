@@ -21,7 +21,6 @@ function Scene2({ goTo, color }) {
     <div className="Scene">
 
       <KoshSnowflake color={color} />
-
       <header className="card">
         <AppearingText>
           <h1>
@@ -83,7 +82,6 @@ function Scene2({ goTo, color }) {
           A random profile pictures generator with a sense of art.
         </Repository>
       </header>
-
       <article className="card">
         <AppearingText>
           Fractals can be a bit surprising.
@@ -103,7 +101,8 @@ function Scene2({ goTo, color }) {
             className="ml-0h"
           >
             the code
-          </a>.
+          </a>
+          .
         </AppearingText>
         <div className="x5b w100 mt-3">
           <AppearingText>

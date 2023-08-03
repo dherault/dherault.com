@@ -31,7 +31,6 @@ function Scene4({ goTo, color }) {
         degree={degree}
         color={color}
       />
-
       <header className="card">
         <AppearingText color={color}>
           <h1>
@@ -54,7 +53,6 @@ function Scene4({ goTo, color }) {
           icon="fa-linkedin"
         />
       </header>
-
       <section className="card x5b">
         <button
           type="button"
@@ -73,7 +71,6 @@ function Scene4({ goTo, color }) {
           Increase degree
         </button>
       </section>
-
       <article className="card">
         <AppearingText>
           Filling space with a curve can be quite a challenge.

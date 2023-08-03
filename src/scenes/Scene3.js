@@ -19,7 +19,6 @@ function Scene3({ goTo, color }) {
     <div className="Scene">
 
       <CirclesDance color={color} />
-
       <header className="card">
         <AppearingText color={color}>
           <h1>
@@ -55,7 +54,6 @@ function Scene3({ goTo, color }) {
           </div>
         </AppearingText>
       </header>
-
       <article className="card">
         <AppearingText>
           This world is constantly vibrating. Hence, circles are in everything.

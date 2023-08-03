@@ -24,7 +24,6 @@ function Scene5({ goTo, color }) {
         mode={mode}
         color={color}
       />
-
       <header className="card">
         <AppearingText color={color}>
           <h1>
@@ -32,7 +31,11 @@ function Scene5({ goTo, color }) {
           </h1>
         </AppearingText>
         <AppearingText className="mt-3">
-          I can solve <em>any</em> JavaScript challenge for your company.
+          I can solve 
+          {' '}
+          <em>any</em>
+          {' '}
+          JavaScript challenge for your company.
         </AppearingText>
         <AppearingText className="mt-2">
           I specialize in Node.js, ReactJS, React Native, DevOps and more.
@@ -47,7 +50,6 @@ function Scene5({ goTo, color }) {
           </a>
         </AppearingText>
       </header>
-
       <section className="card y8s card-polyhedrons">
         <button
           type="button"
@@ -92,7 +94,6 @@ function Scene5({ goTo, color }) {
           Dodecahedron
         </button>
       </section>
-
       <article className="card">
         <AppearingText>
           Regular polyhedrons are the jewels of 3D geometry.
