@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom'
 import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { EmojiProvider } from 'react-apple-emojis'
 
@@ -16,9 +16,8 @@ import Scene4 from './scenes/Scene4'
 import Scene5 from './scenes/Scene5'
 import NotFound from './scenes/NotFound'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+createRoot(document.getElementById('root')).render(
+  <App />
 )
 
 function App() {
