@@ -36,7 +36,7 @@ function Scene3({ goTo, color }) {
         <AppearingText className="mt-3">
           <strong>• Computer programming</strong>
           <div className="mt-1">
-            JavaScript, C++, C# (unity) and Python.
+            JavaScript, C++, C# (Unity) and Python.
             <br />
             Especially complex visualisations and pieces of art.
           </div>
