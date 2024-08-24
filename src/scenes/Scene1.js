@@ -44,6 +44,21 @@ function Scene1({ goTo, color }) {
             +33 666 000 577
           </h2>
         </AppearingText>
+        <AppearingText
+          color={color}
+          className="mt-2"
+        >
+          <a
+            href="https://blog.dherault.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <h2 className="hover-underline">
+              Blog
+            </h2>
+          </a>
+        </AppearingText>
+
       </header>
       <article className="card">
         <AppearingText>

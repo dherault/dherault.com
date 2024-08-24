@@ -26,17 +26,17 @@
     ]
   },
   "dependencies": {
-    "flexpad": "^4.0.1",
+    "flexpad": "^4.0.2",
     "mpxx": "^6.0.1",
-    "react": "^18.2.0",
-    "react-apple-emojis": "^2.2.1",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-apple-emojis": "^2.2.2",
+    "react-dom": "^18.3.1",
     "react-github-btn": "^1.4.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "eslint": "^8.46.0",
-    "eslint-config-dherault": "^1.11.2",
+    "eslint-config-dherault": "^1.11.7",
     "react-scripts": "5.0.1"
   }
 }

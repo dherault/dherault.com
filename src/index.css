@@ -131,6 +131,11 @@ canvas {
   background-color: white;
 }
 
+.hover-underline:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 600px) {
 
   html {
