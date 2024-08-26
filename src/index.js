@@ -21,7 +21,6 @@ createRoot(document.getElementById('root')).render(
 )
 
 function App() {
-  const [isHidden, setIsHidden] = useState(false)
 
   // HACK to fix the height on mobile resolutions
   useEffect(() => {
@@ -37,72 +36,59 @@ function App() {
       <Router>
         <Curtain>
           {({ goTo, color }) => (
-            <div className={isHidden ? 'mobile-hidden' : 'mobile-visible'}>
-              <div
-                onClick={() => setIsHidden(!isHidden)}
-                className="mobile-visibility"
-                style={{ color }}
+            <Switch>
+              <Route
+                exact
+                path="/1"
               >
-                <strong>
-                  {isHidden ? 'Show' : 'Hide'}
-                  {' '}
-                  content
-                </strong>
-              </div>
-              <Switch>
-                <Route
-                  exact
-                  path="/1"
-                >
-                  <Scene1
-                    goTo={goTo}
-                    color={color}
-                  />
-                </Route>
-                <Route
-                  exact
-                  path="/2"
-                >
-                  <Scene2
-                    goTo={goTo}
-                    color={color}
-                  />
-                </Route>
-                <Route
-                  exact
-                  path="/3"
-                >
-                  <Scene3
-                    goTo={goTo}
-                    color={color}
-                  />
-                </Route>
-                <Route
-                  exact
-                  path="/4"
-                >
-                  <Scene4
-                    goTo={goTo}
-                    color={color}
-                  />
-                </Route>
-                <Route
-                  exact
-                  path="/5"
-                >
-                  <Scene5
-                    goTo={goTo}
-                    color={color}
-                  />
-                </Route>
-                <Redirect
-                  exact
-                  from="/"
-                  to="/1"
+                <Scene1
+                  goTo={goTo}
+                  color={color}
                 />
-                <NotFound />
-              </Switch>
-            </div>
+              </Route>
+              <Route
+                exact
+                path="/2"
+              >
+                <Scene2
+                  goTo={goTo}
+                  color={color}
+                />
+              </Route>
+              <Route
+                exact
+                path="/3"
+              >
+                <Scene3
+                  goTo={goTo}
+                  color={color}
+                />
+              </Route>
+              <Route
+                exact
+                path="/4"
+              >
+                <Scene4
+                  goTo={goTo}
+                  color={color}
+                />
+              </Route>
+              <Route
+                exact
+                path="/5"
+              >
+                <Scene5
+                  goTo={goTo}
+                  color={color}
+                />
+              </Route>
+              <Redirect
+                exact
+                from="/"
+                to="/1"
+              />
+              <NotFound />
+            </Switch>
           )}
         </Curtain>
       </Router>

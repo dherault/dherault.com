@@ -14,7 +14,7 @@ function Scene1({ goTo, color }) {
     <div className="Scene">
 
       <FlockOfBirds color={color} />
-      <header className="card">
+      <header className="card mobile-full">
         <AppearingText>
           <h1>
             David Hérault
@@ -54,13 +54,13 @@ function Scene1({ goTo, color }) {
             rel="noreferrer"
           >
             <h2 className="hover-underline">
-              Blog
+              My blog
             </h2>
           </a>
         </AppearingText>
 
       </header>
-      <article className="card">
+      <article className="card mobile-none">
         <AppearingText>
           Birds fly in flocks, they tend to follow the bird in front of them.
         </AppearingText>

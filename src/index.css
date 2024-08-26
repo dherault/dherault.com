@@ -142,6 +142,16 @@ canvas {
     overflow: hidden;
   }
 
+  .mobile-full {
+    top: 0 !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+
+  .mobile-none {
+    display: none !important;
+  }
+
   .mobile-visibility {
     display: block;
     padding: 3px;
@@ -153,7 +163,6 @@ canvas {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.333s ease-in-out;
-
   }
 
   .mobile-hidden > div > header,
