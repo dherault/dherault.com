@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import FlockOfBirds from '../components/FlockOfBirds'
 import AppearingText from '../components/AppearingText'
@@ -25,7 +25,7 @@ function Scene1({ goTo, color }) {
           className="mt-2"
         >
           <h2>
-            JavaScript Architect Freelancer
+            JavaScript Architect
           </h2>
         </AppearingText>
         <AppearingText

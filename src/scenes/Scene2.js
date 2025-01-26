@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import GitHubButton from 'react-github-btn'
 
 import KoshSnowflake from '../components/KoshSnowflake'
@@ -70,10 +70,10 @@ function Scene2({ goTo, color }) {
           A French government app to assert student and civil servants' computer skills. Made by a dream team.
         </Repository>
         <Repository
-          name="Flexpad"
-          url="https://github.com/dherault/flexpad"
+          name="React-apple-emojis"
+          url="https://github.com/dherault/react-apple-emojis"
         >
-          A CSS utility to easily create any flexbox layout.
+          A React component to display Apple emojis. Used in this very website!
         </Repository>
         <Repository
           name="Aquarelle"

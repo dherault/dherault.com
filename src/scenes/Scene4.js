@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import HilbertCurve from '../components/HilbertCurve'
 import AppearingText from '../components/AppearingText'
@@ -43,14 +43,14 @@ function Scene4({ goTo, color }) {
           icon="fa-github"
         />
         <SocialMedia
-          name="Facebook"
-          url="https://www.facebook.com/dherault"
-          icon="fa-facebook"
-        />
-        <SocialMedia
           name="Linkedin"
           url="https://www.linkedin.com/in/dherault"
           icon="fa-linkedin"
+        />
+        <SocialMedia
+          name="Facebook"
+          url="https://www.facebook.com/dherault"
+          icon="fa-facebook"
         />
       </header>
       <section className="card x5b">

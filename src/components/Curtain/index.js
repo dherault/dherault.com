@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router'
 
 import './index.css'
 
@@ -7,7 +7,7 @@ import pathnameToColor from '../../colors'
 
 function Curtain({ children }) {
   const [opacity, setOpacity] = useState(1)
-  const history = useHistory()
+  const navigate = useNavigate()
   const location = useLocation()
   const color = pathnameToColor[location.pathname] || 'white'
 
@@ -21,7 +21,7 @@ function Curtain({ children }) {
     setOpacity(1)
 
     setTimeout(() => {
-      history.push(pathname)
+      navigate(pathname)
 
       setTimeout(() => {
         setOpacity(0)

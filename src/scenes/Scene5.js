@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import Polyhedrons from '../components/Polyhedrons'
 import AppearingText from '../components/AppearingText'
@@ -26,12 +26,12 @@ function Scene5({ goTo, color }) {
       />
       <header className="card">
         <AppearingText color={color}>
-          <h1>
-            I'm actively looking for jobs
+          <h1 style={{ textWrap: 'balance' }}>
+            I'm actively looking for opportunities
           </h1>
         </AppearingText>
         <AppearingText className="mt-3">
-          I can solve 
+          I can solve
           {' '}
           <em>any</em>
           {' '}
@@ -40,7 +40,7 @@ function Scene5({ goTo, color }) {
         <AppearingText className="mt-2">
           I specialize in Node.js, ReactJS, React Native, DevOps and more.
         </AppearingText>
-        <AppearingText className="mt-2">
+        {/* <AppearingText className="mt-2">
           <a
             href="https://www.toptal.com/resume/david-herault"
             target="_blank"
@@ -48,7 +48,7 @@ function Scene5({ goTo, color }) {
           >
             Hire me!
           </a>
-        </AppearingText>
+        </AppearingText> */}
       </header>
       <section className="card y8s card-polyhedrons">
         <button
