@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "eslint": "^8.46.0",
-    "eslint-config-dherault": "^1.11.7",
+    "eslint-config-dherault": "^1.13.0",
     "react-scripts": "5.0.1"
   }
 }

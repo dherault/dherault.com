@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { createRoot } from 'react-dom'
 import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { EmojiProvider } from 'react-apple-emojis'
