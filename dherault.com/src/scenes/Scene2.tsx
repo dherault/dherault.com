@@ -88,7 +88,7 @@ function Scene2({ goTo, color }: SceneProps) {
         <AppearingText className="mt-2">
           Response is in
           <a
-            href="https://github.com/dherault/dherault.com/blob/master/src/components/KoshSnowflake/handleCanvas.js#L172"
+            href="https://github.com/dherault/dherault.com/blob/1260cc36d32a057c5cb4d837b734f3b728b4522f/dherault.com/src/components/KoshSnowflake/handleCanvas.ts#L186"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-1"
