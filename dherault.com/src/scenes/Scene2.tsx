@@ -42,7 +42,7 @@ function Scene2({ goTo, color }: SceneProps) {
         >
           A AWS API Gateway and Lambda emulator to speed up local develoment cycles.
           <br />
-          More than 160 contributors!
+          More than 250 contributors!
         </Repository>
         <Repository
           name="Semantic GraphQL"
