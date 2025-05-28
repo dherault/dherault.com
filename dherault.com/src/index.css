@@ -89,8 +89,8 @@ canvas {
 
 .scene > header {
   position: absolute;
-  top: 6%;
-  left: 6%;
+  top: 3rem;
+  left: 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -99,8 +99,8 @@ canvas {
 
 .scene > article {
   position: absolute;
-  bottom: 6%;
-  right: 6%;
+  bottom: 3rem;
+  right: 3rem;
   max-width: calc(256px + 32px);
   display: flex;
   flex-direction: column;
@@ -109,8 +109,8 @@ canvas {
 
 .scene > section {
   position: absolute;
-  bottom: 6%;
-  left: 6%;
+  bottom: 3rem;
+  left: 3rem;
   max-width: 300px;
 }
 
