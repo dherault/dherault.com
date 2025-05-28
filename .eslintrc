@@ -1,7 +1,3 @@
 {
-  "extends": "dherault",
-  "rules": {
-    "react/no-unescaped-entities": "off",
-    "react/jsx-no-bind": "off"
-  }
+  "extends": "dherault-typescript"
 }

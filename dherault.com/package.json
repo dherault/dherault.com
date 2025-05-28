@@ -1,0 +1,31 @@
+{
+  "name": "dherault.com",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "firebase": "^11.8.1",
+    "flexpad": "^4.0.2",
+    "react": "^19.1.0",
+    "react-apple-emojis": "^2.4.1",
+    "react-dom": "^19.1.0",
+    "react-github-btn": "^1.4.0",
+    "react-router": "^7.6.1",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "globals": "^16.2.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}
