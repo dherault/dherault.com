@@ -6,8 +6,18 @@ import type { SceneProps } from '../types'
 import AppearingText from '../components/AppearingText'
 import KoshSnowflake from '../components/KoshSnowflake'
 import SierpinskiTriangle from '../components/SierpinskiTriangle'
+import Select from '../components/Select'
+
+type FractalType = 'sierpinski' | 'kosh'
+type FractalOption = { value: FractalType, label: string }
+
+const options: FractalOption[] = [
+  { value: 'kosh', label: 'Koch snowflake' },
+  { value: 'sierpinski', label: 'Sierpiński triangle' },
+]
 
 function Scene2({ goTo, color }: SceneProps) {
+  const [option, setOption] = useState<FractalOption>(options[0])
 
   function handleGoBackClick(event: MouseEvent) {
     event.preventDefault()
@@ -21,8 +31,8 @@ function Scene2({ goTo, color }: SceneProps) {
 
   return (
     <div className="scene">
-
-      <SierpinskiTriangle color={color} />
+      {option.value === 'kosh' && <KoshSnowflake color={color} />}
+      {option.value === 'sierpinski' && <SierpinskiTriangle color={color} />}
       <header className="card space-y-2">
         <AppearingText className="mb-2">
           <h2 className="mt-2">
@@ -77,7 +87,13 @@ function Scene2({ goTo, color }: SceneProps) {
         </Repository>
       </header>
       <article className="card">
-        <AppearingText>
+        <Select
+          color={color}
+          value={option}
+          onChange={option => setOption(option as FractalOption)}
+          options={options}
+        />
+        <AppearingText className="mt-2">
           Fractals can be a bit surprising.
         </AppearingText>
         <AppearingText className="mt-2">
