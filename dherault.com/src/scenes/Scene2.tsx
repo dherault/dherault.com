@@ -87,12 +87,14 @@ function Scene2({ goTo, color }: SceneProps) {
         </Repository>
       </header>
       <article className="card">
-        <Select
-          color={color}
-          value={option}
-          onChange={option => setOption(option as FractalOption)}
-          options={options}
-        />
+        <AppearingText className="w-full">
+          <Select
+            color={color}
+            value={option}
+            onChange={option => setOption(option as FractalOption)}
+            options={options}
+          />
+        </AppearingText>
         <AppearingText className="mt-2">
           Fractals can be a bit surprising.
         </AppearingText>
