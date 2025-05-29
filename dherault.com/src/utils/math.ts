@@ -20,10 +20,17 @@ export function distanceXY(p1: XY, p2: XY): number {
   return Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y))
 }
 
-export function addXY(a: XY, b: XY) {
+export function addXY(a: XY, b: XY): XY {
   return {
     x: a.x + b.x,
     y: a.y + b.y,
+  }
+}
+
+export function subtractXY(a: XY, b: XY): XY {
+  return {
+    x: a.x - b.x,
+    y: a.y - b.y,
   }
 }
 
@@ -94,6 +101,10 @@ export function scaleXYZ({ x, y, z }: XYZ, factor: number): XYZ {
   }
 }
 
+export function normXY({ x, y }: XY): number {
+  return Math.sqrt(x * x + y * y)
+}
+
 export function normXYZ({ x, y, z }: XYZ): number {
   return Math.sqrt(x * x + y * y + z * z)
 }
@@ -113,6 +124,16 @@ export function crossProductXYZ(a: XYZ, b: XYZ): XYZ {
     x: a.y * b.z - a.z * b.y,
     y: a.z * b.x - a.x * b.z,
     z: a.x * b.y - a.y * b.x,
+  }
+}
+
+export function rotateXY(vector: XY, angle: number): XY {
+  const cos = Math.cos(angle)
+  const sin = Math.sin(angle)
+
+  return {
+    x: vector.x * cos - vector.y * sin,
+    y: vector.x * sin + vector.y * cos,
   }
 }
 

@@ -1,97 +1,108 @@
+import type { XY } from '../../types'
+import { addXY, normXY, rotateXY, subtractXY } from '../../utils/math'
+
 function handleCanvas(canvas: HTMLCanvasElement, mainColor: string) {
   const _ = canvas.getContext('2d')!
 
+  const devicePixelRatio = window.devicePixelRatio || 1
   const backgroundColor = mainColor
   const strokeColor = 'white'
 
-  const dpr = window.devicePixelRatio || 1
-
-  canvas.width = window.innerWidth * dpr
-  canvas.height = window.innerHeight * dpr
-
-  canvas.style.width = `${window.innerWidth}px`
-  canvas.style.height = `${window.innerHeight}px`
+  canvas.width = window.innerWidth * devicePixelRatio
+  canvas.height = window.innerHeight * devicePixelRatio
 
   const initialWidth = window.innerWidth
   const initialHeight = window.innerHeight
 
-  let width = window.innerWidth
-  let height = window.innerHeight
+  _.scale(devicePixelRatio, devicePixelRatio)
 
-  _.scale(dpr, dpr)
+  const displayRatio = initialHeight / initialWidth
+  const center: XY = { x: initialWidth / 2, y: initialHeight / 1.666 }
+  const scale = 666 * 1.333
 
-  const displayRatio = height / width
-
+  let width = initialWidth
+  let height = initialHeight
   let xMouse = 0
   let yMouse = 0
   let xWindow = 0
   let yWindow = 0
   let isPanning = false
   let isDezooming = false
+  const maxDistanceFactor = 12
 
-  const piByThree = Math.PI / 3
-  const xStart = initialWidth / 3
-  const length = Math.min(initialWidth / 3, initialHeight * 0.75)
-  const sideLength = length / (2 * (1 + Math.cos(piByThree)))
-  const heightLength = length * Math.cos(piByThree) + sideLength * Math.sin(piByThree) / 3
-  const yStart = (initialHeight - heightLength) / 2
-
-  function triangle(_: CanvasRenderingContext2D, n: number, x: number, y: number, l: number, a = 0) {
-    if (!isDezooming && l < 1e-11) {
-      dezoomToStart()
-
-      return
-    }
-
-    const s = l / (2 * (1 + Math.cos(piByThree)))
-
-    const x1 = x + s * Math.cos(a)
-    const y1 = y + s * Math.sin(a)
-    const x2 = x1 + s * Math.cos(a - piByThree)
-    const y2 = y1 + s * Math.sin(a - piByThree)
-    const x3 = x2 + s * Math.cos(a + piByThree)
-    const y3 = y2 + s * Math.sin(a + piByThree)
-    const x4 = x + l * Math.cos(a)
-    const y4 = y + l * Math.sin(a)
-
-    if (
-      Math.min(x, x2, x4) > xWindow + width
-      || Math.max(x, x2, x4) < xWindow
-      || Math.min(y, y2, y4) > yWindow + height
-      || Math.max(y, y2, y4) < yWindow
-    ) {
-      return
-    }
-
-    if (n !== 0) {
-      triangle(_, n - 1, x, y, s, a)
-      triangle(_, n - 1, x1, y1, s, a - piByThree)
-      triangle(_, n - 1, x2, y2, s, a + piByThree)
-      triangle(_, n - 1, x3, y3, s, a)
-
-      return
-    }
-
-    _.moveTo(scaleX(x), scaleY(y))
-    _.lineTo(scaleX(x1), scaleY(y1))
-    _.lineTo(scaleX(x2), scaleY(y2))
-    _.lineTo(scaleX(x3), scaleY(y3))
-    _.lineTo(scaleX(x4), scaleY(y4))
-  }
+  /* ---
+    Draw
+  --- */
 
   function draw() {
-    const depth = Math.round(4 + 0.9 * Math.log(initialWidth / width))
-
     _.fillStyle = backgroundColor
     _.strokeStyle = strokeColor
     _.fillRect(0, 0, initialWidth, initialHeight)
+
+    function drawIteration(center: XY, index = 0) {
+      const maxDistance = maxDistanceFactor * width / initialWidth
+
+      if (!isDezooming && maxDistance < 1e-11) {
+        dezoomToStart()
+
+        return
+      }
+
+      const { nodes, sides, centers } = getTrianglePoints(center, 0.5 ** index)
+
+      // Skip triangles that are completely outside the window
+      if (
+        nodes.every(n => n.x < xWindow)
+        || nodes.every(n => n.x > xWindow + width)
+        || nodes.every(n => n.y < yWindow)
+        || nodes.every(n => n.y > yWindow + height)
+      ) {
+        return
+      }
+
+      if (normXY(subtractXY(nodes[0], nodes[1])) < maxDistance) {
+        drawTriangle(nodes)
+        drawTriangle(sides)
+
+        return
+      }
+
+      centers.forEach(c => {
+        drawIteration(c, index + 1)
+      })
+    }
+
+    drawIteration(center)
+  }
+
+  function drawTriangle(nodes: XY[]) {
+    _.strokeStyle = strokeColor
     _.beginPath()
-    _.moveTo(xStart, yStart)
-    triangle(_, depth, xStart, yStart, length)
-    triangle(_, depth, xStart + length / 2, yStart + length * Math.sin(piByThree), length, -2 * piByThree)
-    triangle(_, depth, xStart + length, yStart, length, -4 * piByThree)
+    _.moveTo(scaleX(nodes[0].x), scaleY(nodes[0].y))
+    _.lineTo(scaleX(nodes[1].x), scaleY(nodes[1].y))
+    _.lineTo(scaleX(nodes[2].x), scaleY(nodes[2].y))
     _.closePath()
     _.stroke()
+  }
+
+  function getTrianglePoints(center: XY, sizeFactor: number,) {
+    const length = Math.sqrt(0.75) / 2 * sizeFactor * scale
+
+    const a: XY = { x: 0, y: -length }
+    const b = rotateXY(a, 2 * Math.PI / 3)
+    const c = rotateXY(a, -2 * Math.PI / 3)
+    const sa = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }
+    const sb = { x: (b.x + c.x) / 2, y: (b.y + c.y) / 2 }
+    const sc = { x: (c.x + a.x) / 2, y: (c.y + a.y) / 2 }
+    const ca = { x: (a.x + sa.x + sc.x) / 3, y: (a.y + sa.y + sc.y) / 3 }
+    const cb = { x: (b.x + sa.x + sb.x) / 3, y: (b.y + sa.y + sb.y) / 3 }
+    const cc = { x: (c.x + sb.x + sc.x) / 3, y: (c.y + sb.y + sc.y) / 3 }
+
+    return {
+      nodes: [a, b, c].map(n => addXY(center, n)),
+      sides: [sa, sb, sc].map(n => addXY(center, n)),
+      centers: [ca, cb, cc].map(n => addXY(center, n)),
+    }
   }
 
   function scaleX(x: number) {
@@ -181,13 +192,6 @@ function handleCanvas(canvas: HTMLCanvasElement, mainColor: string) {
   draw()
 
   return removeEventListeners
-
-  /*
-    To prevent underflow:
-    - Save the zoom state at each zoom iteration and dezoom as a time reversal of this state. The user has no control on the dezooming. Depends on memory.
-    - Zoom toward a specific point or a path continously. Depends on memory.
-    - Zoom only forward. Independant of memory.
-  */
 }
 
 export default handleCanvas

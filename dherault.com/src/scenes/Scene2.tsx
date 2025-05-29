@@ -5,6 +5,7 @@ import GitHubButton from 'react-github-btn'
 import type { SceneProps } from '../types'
 import AppearingText from '../components/AppearingText'
 import KoshSnowflake from '../components/KoshSnowflake'
+import SierpinskiTriangle from '../components/SierpinskiTriangle'
 
 function Scene2({ goTo, color }: SceneProps) {
 
@@ -21,7 +22,7 @@ function Scene2({ goTo, color }: SceneProps) {
   return (
     <div className="scene">
 
-      <KoshSnowflake color={color} />
+      <SierpinskiTriangle color={color} />
       <header className="card space-y-2">
         <AppearingText className="mb-2">
           <h2 className="mt-2">
