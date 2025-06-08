@@ -26,7 +26,7 @@ function Scene1({ goTo, color }: SceneProps) {
           className="mt-1"
         >
           <h2>
-            JavaScript Architect
+            Software architect
           </h2>
         </AppearingText>
         <AppearingText
